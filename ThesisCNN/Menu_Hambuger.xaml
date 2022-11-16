@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThesisCNN.Menu_Hambuger"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="780" />
+                </Grid.RowDefinitions>
+                <!--HAMBURGER MENU BODY-->
+                <Grid Grid.Row="0" Grid.Column="0" TranslationX="0" BackgroundColor="#B6CC5F"
+                          x:Name="HamMenu" >
+                    <Grid.RowDefinitions>
+                        <!--BACK ARROW-->
+                        <RowDefinition Height="70"/>
+                        <!--USERS PROFILE PICTURE-->
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="165"/>
+                        <!--USERS NAME & EMAIL-->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="45"/>
+                        <!--MY FILES & PROFILE & LOGOUT-->
+                        <RowDefinition Height="300"/>
+                    </Grid.RowDefinitions>
+
+
+                    <!--USERS PROFILE PICTURE-->
+                    <Grid Grid.Row="2" Grid.Column="0" >
+                        <ImageButton Grid.Row="0" Grid.Column="0"  BackgroundColor="Transparent"
+                                         Source="icon_profilePic.png" HorizontalOptions="Center" Clicked="Button_Myprofile"/>
+                    </Grid>
+                    <!--USERS NAME & EMAIL-->
+                    <Grid Grid.Row="4" Grid.Column="0">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Users Name" FontSize="23" TextColor="Black"
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Start" />
+                    </Grid>
+
+                    <!--MY FILES & PROFILE & LOGOUT-->
+                    <Grid Grid.Row="5" Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <!--1ST LINE-->
+                            <RowDefinition Height="3"/>
+                            <!--MY FILES & PROFILE-->
+                            <RowDefinition Height="265"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="24"/>
+                            <ColumnDefinition Width="239"/>
+                            <ColumnDefinition Width="24"/>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Row="0" Grid.Column="1" Color="White"/>
+                        <!--MY FILES & PROFILE & LOGOUT-->
+                        <Grid Grid.Row="1" Grid.Column="1" >
+                            <Grid.RowDefinitions>
+                                <!--SPACE-->
+                                <RowDefinition Height="15"/>
+                                <!--MY FILE-->
+                                <RowDefinition Height="28"/>
+                                <!--SPACE-->
+                                <RowDefinition Height="12"/>
+                                <!--MY PROFILE-->
+                                <RowDefinition Height="30"/>
+                                <!--SPACE-->
+                                <RowDefinition Height="12"/>
+                                <!--ABOUT-->
+                                <RowDefinition Height="35"/>
+                                <!--SPACE-->
+                                <RowDefinition Height="15"/>
+                                <!--2ST LINE-->
+                                <RowDefinition Height="3"/>
+                                <!--SPACE-->
+                                <RowDefinition Height="15"/>
+                                <!--LOGOUT-->
+                                <RowDefinition Height="32"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <!--SPACE-->
+                                <ColumnDefinition Width="10"/>
+                                <!--MY FILES-->
+                                <ColumnDefinition Width="55"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!--MY FILES-->
+                            <Image Grid.Row="1" Grid.Column="1" Source="icon_myFiles.png" 
+                                             BackgroundColor="Transparent"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="MY FILES" FontSize="22" TextColor="Black"
+                                       VerticalOptions="Center" />
+                            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" BackgroundColor="Transparent"
+                                        Clicked="Button_Myfiles"/>
+
+                            <!--MY PROFILE-->
+                            <Image Grid.Row="3" Grid.Column="1" Source="icon_myProfile" BackgroundColor="Transparent"/>
+                            <Label Grid.Row="3" Grid.Column="2" Text="MY PROFILE" FontSize="22" TextColor="Black"
+                                       VerticalOptions="Center" />
+                            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Transparent"
+                                         Clicked="Button_Myprofile"/>
+
+                            <!--ABOUT-->
+                            <Image Grid.Row="5" Grid.Column="1" Source="icon_about" BackgroundColor="Transparent"/>
+                            <Label Grid.Row="5" Grid.Column="2" Text="About" FontSize="22" TextColor="Black"
+                                       VerticalOptions="Center" />
+                            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Transparent"
+                                        Clicked="Button_About"/>
+
+                            <BoxView Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Color="White"/>
+                            <!--LOGOUT-->
+                            <Image Grid.Row="9" Grid.Column="1" Source="logout.PNG"/>
+                            <Label Grid.Row="9" Grid.Column="2" Text="LOGOUT" FontSize="22" TextColor="Black"
+                                       VerticalOptions="Center" />
+                            <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="Transparent"
+                                         Clicked="Button_Logout"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </StackLayout>
+</StackLayout>

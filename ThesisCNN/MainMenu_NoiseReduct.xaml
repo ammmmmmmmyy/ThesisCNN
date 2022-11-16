@@ -1,12 +1,205 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ThesisCNN.MainMenu_NoiseReduct">
+             xmlns:common="clr-namespace:ThesisCNN"
+             x:Class="ThesisCNN.MainMenu_NoiseReduct"
+             BackgroundColor="#F6F2F2"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+
+            <Grid>
+                <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid.RowDefinitions>
+                        <!--NAVIGATION BAR-->
+                        <RowDefinition Height="60"/>
+                        <!--SWITCH-->
+                        <RowDefinition Height="40"/>
+                        <!--BOX 1 NOISE REDUCTION-->
+                        <RowDefinition Height="220"/>
+                        <!--BOX 2 EQUALIZER-->
+                        <RowDefinition Height="200"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <!--NAVIGATION BAR-->
+                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Padding="6" BackgroundColor="#C9E265">
+                        <ImageButton Source="hamburgerMENU.png" BackgroundColor="Transparent" 
+                                     HorizontalOptions="Start"  HeightRequest="40" Clicked="Button_HamMenu"/>
+                    </Grid>
+                    <!--SWITCH-->
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="280"/>
+                            <ColumnDefinition Width="44"/>
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+
+                        <BoxView Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#D9D9D9"
+                         CornerRadius="15"/>
+                        <Switch Grid.Column="1" Grid.Row="1" IsToggled="True" HorizontalOptions="End"
+                        ThumbColor="#C9E265" Toggled="Switch_toggled"/>
+
+                        <Label Grid.Column="2" Grid.Row="1" Text="on" FontAttributes="Bold" TextColor="Black"
+                        Margin="0,2,0,0" FontSize="15" HorizontalTextAlignment="Start" x:Name="switchState"/>
+                    </Grid>
+
+                    <!--BOX 1 NOISE REDUCTION-->
+                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,0" x:Name="aa">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="1"/>
+
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" 
+                         BackgroundColor="White" CornerRadius="15"/>
+
+                        <Label Grid.Row="1" Grid.ColumnSpan="6" Text="Noise Reduction" 
+                       FontSize="28" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                        <Label Grid.Row="3" Grid.ColumnSpan="6" Text="Strength of noise reduction" 
+                       FontSize="15" TextColor="Gray" HorizontalOptions="Center"/>
+
+                        <!--BUTTON NOISE REDUCTION-->
+                        <Button Grid.Row="5" Grid.Column="1" BackgroundColor="#C9E265" CornerRadius="10" 
+                        Clicked="Button_noiseReduction_low" x:Name="button_low" Text="Low" TextTransform="None"
+                        FontSize="19" FontAttributes="Bold" />
+                        <Button Grid.Row="5" Grid.Column="3" BackgroundColor="#C9E265" CornerRadius="10"
+                        Clicked="Button_noiseReduction_medium" x:Name="button_medium" TextTransform="None"
+                        FontSize="19" FontAttributes="Bold" Text="Medium"/>
+                        <Button Grid.Row="5" Grid.Column="5" BackgroundColor="#C9E265" CornerRadius="10"
+                        Clicked="Button_noiseReduction_high" x:Name="button_high" TextTransform="None"
+                        FontSize="19" FontAttributes="Bold" Text="High"/>
+                    </Grid>
+
+                    <!--BOX 2 EQUALIZER-->
+                    <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,10,20,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="13"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="19"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="13"/>
+                            <RowDefinition Height="15"/>
+                        </Grid.RowDefinitions>
+
+                        <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="11" Grid.ColumnSpan="1"
+                         BackgroundColor="White" CornerRadius="15"/>
+
+                        <Label Grid.Row="1" Grid.ColumnSpan="1" Text="Equalizer" 
+                       FontSize="28" TextColor="Black" FontAttributes="Bold" HorizontalTextAlignment="Start"
+                       Margin="15,0,0,0"/>
+
+                        <Label Grid.Row="3" Grid.ColumnSpan="1" Text="Boost" 
+                       FontSize="15" TextColor="Gray"  Margin="25,0,0,0"/>
+
+                        <Slider Grid.Row="5" Grid.ColumnSpan="1" Minimum="0" Maximum="100" MaximumTrackColor="Gray"
+                        MinimumTrackColor="Black" Margin="12,0,12,0"/>
+
+                        <Label Grid.Row="7" Grid.ColumnSpan="1" Text="Fine tuning" 
+                       FontSize="15" TextColor="Gray"  Margin="25,0,0,0"/>
+
+                        <Slider Grid.Row="9" Grid.ColumnSpan="1" Minimum="0" Maximum="100" MaximumTrackColor="Gray"
+                        MinimumTrackColor="Black" Margin="12,0,12,0"/>
+                    </Grid>
+
+                    <!--MAIN MENU-->
+                    <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="78"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="17"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="70"/>
+
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="17"/>
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" Grid.RowSpan="2" BackgroundColor="White"/>
+
+                        <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_hearing.png" 
+                             BackgroundColor="Transparent" IsVisible="false" IsEnabled="False"
+                             x:Name="button_noiseReduction" Clicked="Clicked_button_noiseReduction"/>
+
+                        <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_cam.png" BackgroundColor="Transparent"
+                             x:Name="button_cam" Clicked="Clicked_button_cam" IsVisible="false" IsEnabled="False"/>
+
+                        <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_speech.png" BackgroundColor="Transparent"
+                             x:Name="button_speech" Clicked="Clicked_button_speech" IsVisible="false" IsEnabled="False"/>
+
+
+                        <ImageButton Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3" 
+                             Source="menu_hearing.png" BackgroundColor="Transparent"
+                             Clicked="Button_mainmenu"/>
+                    </Grid>
+
+                </Grid>
+                <!--HAMBURGER MENU BODY-->
+                <common:Menu_Hambuger x:Name="HamMenu" TranslationX="-393" IsVisible="False" IsEnabled="False">
+
+                    <!--BACK ARROW-->
+                    <Grid Grid.Row="0" Grid.Column="0" TranslationY="-766">
+                        <Grid.ColumnDefinitions>
+                            <!--SPACE-->
+                            <ColumnDefinition Width="191"/>
+                            <!--BACK ARROW-->
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Image Grid.Row="0" Grid.Column="1" Source="back_arroww.png" 
+                               BackgroundColor="Transparent" />
+                        <Label Grid.Row="0" Grid.Column="2" Text="Back" FontSize="28" 
+                                TextColor="Black" TranslationY="-4" TranslationX="-4"/>
+                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Clicked="Button_HamMenu"
+                                        BackgroundColor="Transparent"/>
+
+                    </Grid>
+                </common:Menu_Hambuger>
+                <!--END: HAMBURGER MENU-->
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

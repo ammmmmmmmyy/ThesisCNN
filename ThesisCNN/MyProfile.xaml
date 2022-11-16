@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThesisCNN.MyProfile"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="#F2F1F1">
+                <Grid.RowDefinitions>
+                    <!--CHANGE PICTURE-->
+                    <RowDefinition Height="260"/>
+                    <!--EDIT NY PROFILE-->
+                    <RowDefinition Height="27"/>
+                    <!--USERS NAME & EMAIL-->
+                    <RowDefinition Height="200"/>
+                    <!--SAVE CHANGES BUTTON-->
+                    <RowDefinition Height="120"/>
+                    <!--TEXT-->
+                    <RowDefinition Height="60"/>
+                    <!---->
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+
+                <!--CHANGE PICTURE & BACK ARROW-->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <!--SPACE-->
+                        <RowDefinition Height="20"/>
+                        <!--ARROW-->
+                        <RowDefinition Height="15"/>
+                        <!--ARROW-->
+                        <RowDefinition Height="15"/>
+                        <!--PROFILE PIC-->
+                        <RowDefinition Height="75"/>
+                        <!--PROFILE PIC-->
+                        <RowDefinition Height="95"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <!--SPACE-->
+                        <ColumnDefinition Width="10"/>
+                        <!--ARROW-->
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="3" 
+                           BackgroundColor="White"/>
+                    <!--ARROW-->
+                    <ImageButton Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Padding="4" Clicked="Button_backArrow"
+                                 Source="back_arrow.png" BackgroundColor="Transparent"/>
+                    <!--PROFILE PIC-->
+                    <ImageButton Grid.Row="2" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" 
+                                 Source="myprofilepic.png" BackgroundColor="Transparent"/>
+                </Grid>
+
+                <!--EDIT MY PROFILE-->
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <!--TEXT-->
+                    <Label Grid.Row="0" Grid.Column="0" Text="EDIT MY PROFILE" TextColor="Black"
+                           FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                </Grid>
+
+                <!--EDIT NAME & EMAIL-->
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <!--SPACE-->
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <!--SPACE-->
+                        <RowDefinition Height="10"/>
+                        <!--NAME-->
+                        <RowDefinition Height="23"/>
+                        <!--ENTER NAME-->
+                        <RowDefinition Height="40"/>
+                        <!--EMAIL-->
+                        <RowDefinition Height="23"/>
+                        <!--ENTER EMAIL-->
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <!--NAME-->
+                    <Label Grid.Row="1" Grid.Column="1" Text="NAME" FontSize="19" />
+                    <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="19" />
+                    <!--EMAIL-->
+                    <Label Grid.Row="3" Grid.Column="1" Text="EMAIL" FontSize="19"/>
+                    <Entry Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20"/>
+                </Grid>
+
+                <!--SAVE CHANGES BUTTON-->
+                <Grid Grid.Row="3" Grid.Column="0" >
+                    <Grid.ColumnDefinitions>
+                        <!--SPACE-->
+                        <ColumnDefinition Width="80"/>
+                        <!--SAVE BUTTON-->
+                        <ColumnDefinition Width="220"/>
+                        <!--SPACE-->
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <!--SAVE BUTTON-->
+                        <RowDefinition Height="70"/>
+                        <!--SAVE BUTTON-->
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.Column="1"  Text="SAVE CHANGES" CornerRadius="12"
+                            BackgroundColor="#C9E265" FontSize="22" FontAttributes="Bold"/>
+                </Grid>
+
+                <!--TEXT-->
+                <Grid Grid.Row="4" Grid.Column="0" >
+                    <Label Text="For enhanced account security, keep your account information up to date. "
+                           Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center"
+                           Padding="30,0,30,0" VerticalTextAlignment="End" FontSize="16" FontAttributes="None"/>
+                </Grid>
+                <!---->
+                <Grid Grid.Row="5" Grid.Column="0">
+                    <BoxView BackgroundColor="White" />
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -10,45 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace ThesisCNN
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenu_NoiseReduct : ContentPage
+    public partial class MainMenu_SignLangCapture : ContentPage
     {
-        public MainMenu_NoiseReduct()
+        public MainMenu_SignLangCapture()
         {
             InitializeComponent();
         }
-        //SWITCH
-        private void Switch_toggled(object sender, ToggledEventArgs e)
-        {
-            var state = e.Value;
-            if (state == false)
-            {
-                switchState.Text = "off";
-                button_low.IsEnabled = false;
-                button_medium.IsEnabled = false;
-                button_high.IsEnabled = false;
-            }
-            else
-            {
-                switchState.Text = "on";
-                button_low.IsEnabled = true;
-                button_medium.IsEnabled = true;
-                button_high.IsEnabled = true;
-            }
-        }
-        //
-        private void Button_noiseReduction_low(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Login_Page());
-        }
-        private void Button_noiseReduction_medium(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new SignUP_Page());
-        }
-        private void Button_noiseReduction_high(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MainMenu_NoiseReduct());
-        }
-        //MAIN BUTTON
         async void Button_mainmenu(object sender, EventArgs e)
         {
             if (button_noiseReduction.IsVisible == false && button_cam.IsVisible == false && button_speech.IsVisible == false)
@@ -84,17 +51,14 @@ namespace ThesisCNN
                 button_speech.IsVisible = false;
             }
         }
-        //MAIN MENU NOISE REDUCTION 
         private void Clicked_button_noiseReduction(object sender, EventArgs e)
         {
             Navigation.PushAsync(new MainMenu_NoiseReduct());
         }
-        //MAIN MENU CAM
         private void Clicked_button_cam(object sender, EventArgs e)
         {
             Navigation.PushAsync(new MainMenu_SignLangCapture());
         }
-        //MAIN MENU SPEECH TO TEXT
         private void Clicked_button_speech(object sender, EventArgs e)
         {
             Navigation.PushAsync(new MainMenu_SpeechTextTrans());
@@ -106,15 +70,14 @@ namespace ThesisCNN
             {
                 HamMenu.IsEnabled = true;
                 HamMenu.IsVisible = true;
-                await HamMenu.TranslateTo(0, 0, 500);
+                await HamMenu.TranslateTo(0, -800, 500);
             }
             else
             {
-                await HamMenu.TranslateTo(-300, 0, 500);
+                await HamMenu.TranslateTo(-300, -800, 500);
                 HamMenu.IsEnabled = false;
                 HamMenu.IsVisible = false;
             }
         }
-        //MY PROFILE
     }
 }
