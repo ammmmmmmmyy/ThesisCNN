@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace ThesisCNN
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUP_Page : ContentPage
+    public partial class Login_Page : ContentPage
     {
-        public SignUP_Page()
+        public Login_Page()
         {
             InitializeComponent();
         }
@@ -20,9 +20,13 @@ namespace ThesisCNN
         {
             Navigation.PushAsync(new MainMenu_NoiseReduct());
         }
-        private void TapGes_login(object sender, EventArgs e)
+        private void tapGes_signUp(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Login_Page());
+            Navigation.PushAsync(new SignUP_Page());
+        }
+        private void tapGes_forgotPass(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SignUP_Page());
         }
     }
 }

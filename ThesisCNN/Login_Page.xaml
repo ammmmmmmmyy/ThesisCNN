@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThesisCNN.Login_Page"
+             BackgroundImageSource="startPageBG"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--space before wel-->
+                    <RowDefinition Height="110"/>
+                    <!--welcome-->
+                    <RowDefinition Height="62"/>
+                    <!--space between wel & login-->
+                    <RowDefinition Height="6"/>
+                    <!--login-->
+                    <RowDefinition Height="60"/>
+                    <!--space between login & email-->
+                    <RowDefinition Height="15"/>
+                    <!--email-->
+                    <RowDefinition Height="60"/>
+                    <!--space between email & password-->
+                    <RowDefinition Height="15"/>
+                    <!--password-->
+                    <RowDefinition Height="60"/>
+                    <!--space between password & signup-->
+                    <RowDefinition Height="25"/>
+                    <!--signup-->
+                    <RowDefinition Height="60"/>
+
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Welcome Back" FontSize="48" HorizontalOptions="Center" 
+               TextColor="Black"/>
+                <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Login" FontSize="40" HorizontalOptions="Center" 
+               TextColor="Black" FontAttributes="Bold" />
+
+                <BoxView Grid.Row="5" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0" />
+                <Entry Grid.Row="5" Grid.ColumnSpan="2" x:Name="logIn_email" Placeholder="Email"
+                BackgroundColor="Transparent" Margin="20,0,20,0"/>
+
+
+                <BoxView Grid.Row="7" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0"/>
+                <Entry Grid.Row="7" Grid.ColumnSpan="2" x:Name="logIn_pass" Placeholder="Password" 
+                   BackgroundColor="Transparent" Margin="20,0,20,0"/>
+
+                <Button Grid.Row="9" Grid.ColumnSpan="2" Text="Login" CornerRadius="8" Clicked="Register_Clicked" 
+                    BackgroundColor="#C9E265" FontSize="20" Margin="15,0,15,0"/>
+
+            </Grid>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Label Text="Forgot Password?" TextColor="Blue" FontSize="15">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="tapGes_forgotPass"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,120,0,0" >
+                <Label Text="Don't have an account?" 
+               FontSize="15" HorizontalOptions="Center" 
+               TextColor="Gray" />
+
+                <Label Text="Sign Up" TextColor="Blue">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="tapGes_signUp"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

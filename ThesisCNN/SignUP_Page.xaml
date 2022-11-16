@@ -1,12 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ThesisCNN.SignUP_Page">
+             x:Class="ThesisCNN.SignUP_Page"
+             BackgroundImageSource="startPageBG"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--space before wel-->
+                    <RowDefinition Height="110"/>
+                    <!--welcome-->
+                    <RowDefinition Height="62"/>
+                    <!--space between wel & create AC-->
+                    <RowDefinition Height="6"/>
+                    <!--create account-->
+                    <RowDefinition Height="60"/>
+                    <!--space between create aacount & fullname-->
+                    <RowDefinition Height="15"/>
+                    <!--fullname-->
+                    <RowDefinition Height="60"/>
+                    <!--space between fullname & email -->
+                    <RowDefinition Height="6"/>
+                    <!--email-->
+                    <RowDefinition Height="60"/>
+                    <!--space between email & password-->
+                    <RowDefinition Height="6"/>
+                    <!--password -->
+                    <RowDefinition Height="60"/>
+                    <!--space between password & signup-->
+                    <RowDefinition Height="25"/>
+                    <!--signup-->
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+
+                <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Welcome" FontSize="48" TextColor="Black"  
+                   HorizontalTextAlignment="Center" FontAttributes="Italic" FontFamily=""/>
+
+                <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Create account" FontSize="40" TextColor="Black" 
+                   FontAttributes="Bold" HorizontalTextAlignment="Center"  />
+
+
+                <BoxView Grid.Row="5" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0" />
+                <Entry Grid.Row="5" Grid.ColumnSpan="2" x:Name="createAC_namee" Placeholder="Full name"
+                BackgroundColor="Transparent" Margin="20,0,20,0"/>
+
+
+                <BoxView Grid.Row="7" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0"/>
+                <Entry Grid.Row="7" Grid.ColumnSpan="2" x:Name="createAC_email" Placeholder="Email" 
+                   BackgroundColor="Transparent" Margin="20,0,20,0"/>
+
+
+                <BoxView Grid.Row="9" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0"/>
+                <Entry Grid.Row="9" Grid.ColumnSpan="2" x:Name="createAC_pass" Placeholder="Password" 
+                   BackgroundColor="Transparent" Margin="20,0,20,0"/>
+
+                <Button Grid.Row="11" Grid.ColumnSpan="2" Text="Sign up" CornerRadius="8" Clicked="Register_Clicked" 
+                    BackgroundColor="#C9E265" FontSize="20" Margin="15,0,15,0"/>
+
+
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,0">
+                <Label Text="By signing up you accept the" 
+               FontSize="15" HorizontalOptions="Center" 
+               TextColor="Gray" />
+
+                <Label Text="Terms of Service" TextColor="Blue"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text="and" 
+               FontSize="15" HorizontalOptions="Center" 
+               TextColor="Gray" />
+
+                <Label Text="Privacy Policy" TextColor="Blue"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,45,0,0">
+                <Label Text="Already have an account?" 
+               FontSize="15" HorizontalOptions="Center" 
+               TextColor="Gray" />
+
+                <Label x:Name="logIN" Text="Log In" TextColor="Blue">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGes_login"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
