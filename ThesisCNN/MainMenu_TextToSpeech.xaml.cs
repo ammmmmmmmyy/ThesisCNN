@@ -6,16 +6,25 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace ThesisCNN
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenu_SignLangCapture : ContentPage
+    public partial class MainMenu_TextToSpeech : ContentPage
     {
-        public MainMenu_SignLangCapture()
+        public MainMenu_TextToSpeech()
         {
             InitializeComponent();
+            TextToSpeech.SpeakAsync("Hello User");
         }
+        //Text to Speech
+        public void SpeechButtonPressed(object sender, EventArgs args)
+        {
+            TextToSpeech.SpeakAsync(SpeechInput.Text);
+        }
+
+        //MAIN BUTTON
         async void Button_mainmenu(object sender, EventArgs e)
         {
             if (button_noiseReduction.IsVisible == false && button_cam.IsVisible == false && button_speech.IsVisible == false)
@@ -61,7 +70,7 @@ namespace ThesisCNN
         }
         private void Clicked_button_speech(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_TextToSpeech());
+            Navigation.PushAsync(new MainMenu_SpeechTextTrans());
         }
         //HAMBURGER MENU
         private async void Button_HamMenu(object sender, EventArgs e)
@@ -70,14 +79,20 @@ namespace ThesisCNN
             {
                 HamMenu.IsEnabled = true;
                 HamMenu.IsVisible = true;
-                await HamMenu.TranslateTo(0, -800, 500);
+                await HamMenu.TranslateTo(0, 0, 500);
             }
             else
             {
-                await HamMenu.TranslateTo(-300, -800, 500);
+                await HamMenu.TranslateTo(-300, 0, 500);
                 HamMenu.IsEnabled = false;
                 HamMenu.IsVisible = false;
             }
+        }
+
+        //NAV:SPEECH TO TEXT PAGE
+        private void Button_text_speech(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainMenu_SpeechTextTrans());
         }
     }
 }

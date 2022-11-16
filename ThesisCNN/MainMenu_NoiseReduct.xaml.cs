@@ -97,7 +97,7 @@ namespace ThesisCNN
         //MAIN MENU SPEECH TO TEXT
         private void Clicked_button_speech(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_SpeechTextTrans());
+            Navigation.PushAsync(new MainMenu_TextToSpeech());
         }
         //HAMBURGER MENU
         private async void Button_HamMenu(object sender, EventArgs e)

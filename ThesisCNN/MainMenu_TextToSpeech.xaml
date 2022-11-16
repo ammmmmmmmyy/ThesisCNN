@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:ThesisCNN"
+             x:Class="ThesisCNN.MainMenu_TextToSpeech"
+             BackgroundColor="#F6F2F2"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <!--NAVIGATION BAR-->
+                    <RowDefinition Height="60"/>
+                    <!--BODY-->
+                    <RowDefinition Height="456"/>
+                    <!--MAIN MENU-->
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <!--NAVIGATION BAR-->
+                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Padding="6" BackgroundColor="#C9E265">
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="hamburgerMENU.png" 
+                                 BackgroundColor="Transparent" HorizontalOptions="Start"  
+                                 HeightRequest="40" Clicked="Button_HamMenu"/>
+
+                    <ImageButton Grid.Row="0" Grid.Column="1" Source="text_speech"
+                                 BackgroundColor="Transparent" HorizontalOptions="End"
+                                 HeightRequest="40" Clicked="Button_text_speech"/>
+                </Grid>
+
+                <!--BODY-->
+                <!--TO FIX TEXT TO SPEECH-->
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                    <!--INSERT CODE HERE-->
+                    <Label Grid.Row="1" Grid.Column="0"  Text="Text to Speech" HorizontalTextAlignment="Center" 
+                            FontAttributes="Bold" TextColor="Black" FontSize="30" VerticalTextAlignment="Center"/>
+
+                    <Grid Grid.Row="2" Grid.Column="0"  >
+                        <Entry x:Name="SpeechInput"
+                           Placeholder="Enter Text"
+                           WidthRequest="250"
+                           />
+                    </Grid>
+                    <Grid Grid.Row="3" Grid.Column="0" >
+                        <Button x:Name="SpeechOutput"
+                            Text="Speak for Me!"
+                            TextTransform="None"
+                            HeightRequest="50"
+                            WidthRequest="250"
+                            Clicked="SpeechButtonPressed"
+                            />
+                    </Grid>
+                    <!--END: BODY-->
+                </Grid>
+
+
+                <!--MAIN MENU-->
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="78"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="70"/>
+
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="17"/>
+                    </Grid.ColumnDefinitions>
+
+                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" Grid.RowSpan="2" BackgroundColor="White"/>
+
+                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_hearing.png" 
+                             BackgroundColor="Transparent" IsVisible="false" IsEnabled="False"
+                             x:Name="button_noiseReduction" Clicked="Clicked_button_noiseReduction"/>
+
+                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_cam.png" BackgroundColor="Transparent"
+                             x:Name="button_cam" Clicked="Clicked_button_cam" IsVisible="false" IsEnabled="False"/>
+
+                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_speech.png" BackgroundColor="Transparent"
+                             x:Name="button_speech" Clicked="Clicked_button_speech" IsVisible="false" IsEnabled="False"/>
+
+
+                    <ImageButton Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3" 
+                             Source="menu_speech.png" BackgroundColor="Transparent"
+                             Clicked="Button_mainmenu"/>
+                </Grid>
+                <!--END: MAIN MENU-->
+
+                <!--HAMBURGER MENU BODY-->
+                <common:Menu_Hambuger x:Name="HamMenu" TranslationX="-393" IsVisible="False" IsEnabled="False" >
+
+                    <!--BACK ARROW-->
+                    <Grid Grid.Row="0" Grid.Column="0" TranslationY="-766">
+                        <Grid.ColumnDefinitions>
+                            <!--SPACE-->
+                            <ColumnDefinition Width="191"/>
+                            <!--BACK ARROW-->
+                            <ColumnDefinition Width="30"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Image Grid.Row="0" Grid.Column="1" Source="back_arroww.png" 
+                               BackgroundColor="Transparent" />
+                        <Label Grid.Row="0" Grid.Column="2" Text="Back" FontSize="28" 
+                                TextColor="Black" TranslationY="-4" TranslationX="-4"/>
+                        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Clicked="Button_HamMenu"
+                                        BackgroundColor="Transparent"/>
+
+                    </Grid>
+                </common:Menu_Hambuger>
+                <!--END: HAMBURGER MENU-->
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
