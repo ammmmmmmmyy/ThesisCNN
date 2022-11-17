@@ -10,7 +10,7 @@ namespace ThesisCNN
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new SignUP_Page());
+            MainPage = new Hamburger_Menu_Shell();
         }
 
         protected override void OnStart()

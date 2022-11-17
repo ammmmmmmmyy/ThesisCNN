@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ThesisCNN"
+       x:Class="ThesisCNN.Hamburger_Menu_Shell"
+       BackgroundColor="#C9E265"
+       Shell.ForegroundColor="Black">
+
+    
+    <ShellItem Route="SignUP_Page" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:SignUP_Page}"/>
+    </ShellItem>
+    
+    <!--MAIN MENU PAGES-->
+    <ShellItem Route="MainMenu_NoiseReduct" FlyoutItemIsVisible="False" >
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_NoiseReduct}"/>
+    </ShellItem>
+    <ShellItem Route="MainMenu_SignLangCapture" FlyoutItemIsVisible="False" >
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SignLangCapture}"/>
+    </ShellItem>
+    <ShellItem Route="MainMenu_TextToSpeech" FlyoutItemIsVisible="False" >
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_TextToSpeech}"/>
+    </ShellItem>
+    <!--
+    <FlyoutItem Title="NoiseReduction" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_NoiseReduct}" Route="MainMenu_NoiseReduct"/>
+    </FlyoutItem>
+    <FlyoutItem Title="MainMenu_SignLangCapture" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SignLangCapture}" Route="MainMenu_SignLangCapture"/>
+    </FlyoutItem>
+    <FlyoutItem Title="MainMenu_TextToSpeech" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_TextToSpeech}" Route="MainMenu_TextToSpeech"/>
+    </FlyoutItem>
+    <FlyoutItem Title="MainMenu_SpeechTextTrans" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SpeechTextTrans}" Route="MainMenu_SpeechTextTrans"/>
+    </FlyoutItem>
+    -->
+    
+    
+    <!--HAMBURGER MENU PAGES-->
+    <FlyoutItem Title="MY FILES" Icon="icon_myFiles.png" >
+        <ShellContent ContentTemplate="{DataTemplate local:MyFiles}" Route="MyFiles"/>
+    </FlyoutItem>
+    <FlyoutItem Title="MY PROFILE" Icon="icon_myProfile.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MyProfile}" Route="MyProfile"/>
+    </FlyoutItem>
+    <FlyoutItem Title="ABOUT" Icon="icon_about.png">
+        <ShellContent ContentTemplate="{DataTemplate local:About}" Route="About"/>
+    </FlyoutItem>
+    <FlyoutItem Title="LOGOUT" Icon="logout.png">
+        <ShellContent ContentTemplate="{DataTemplate local:Login_Page}" Route="Login_Page"/>
+    </FlyoutItem>
+</Shell>

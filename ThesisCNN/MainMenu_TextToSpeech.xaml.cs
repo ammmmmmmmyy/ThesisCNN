@@ -60,33 +60,25 @@ namespace ThesisCNN
                 button_speech.IsVisible = false;
             }
         }
-        private void Clicked_button_noiseReduction(object sender, EventArgs e)
+        //MAIN MENU NOISE REDUCTION 
+        private async void Clicked_button_noiseReduction(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_NoiseReduct());
+            await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
         }
-        private void Clicked_button_cam(object sender, EventArgs e)
+        //MAIN MENU CAM
+        private async void Clicked_button_cam(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_SignLangCapture());
+            await Shell.Current.GoToAsync($"//{nameof(MainMenu_SignLangCapture)}");
         }
-        private void Clicked_button_speech(object sender, EventArgs e)
+        //MAIN MENU SPEECH TO TEXT
+        private async void Clicked_button_speech(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_SpeechTextTrans());
+            await Shell.Current.GoToAsync($"//{nameof(MainMenu_TextToSpeech)}");
         }
         //HAMBURGER MENU
-        private async void Button_HamMenu(object sender, EventArgs e)
+        private void Button_HamMenu(object sender, EventArgs e)
         {
-            if (HamMenu.IsEnabled == false)
-            {
-                HamMenu.IsEnabled = true;
-                HamMenu.IsVisible = true;
-                await HamMenu.TranslateTo(0, 0, 500);
-            }
-            else
-            {
-                await HamMenu.TranslateTo(-300, 0, 500);
-                HamMenu.IsEnabled = false;
-                HamMenu.IsVisible = false;
-            }
+            Shell.Current.FlyoutIsPresented = true;
         }
 
         //NAV:SPEECH TO TEXT PAGE

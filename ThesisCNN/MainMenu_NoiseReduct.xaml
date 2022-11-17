@@ -4,7 +4,8 @@
              xmlns:common="clr-namespace:ThesisCNN"
              x:Class="ThesisCNN.MainMenu_NoiseReduct"
              BackgroundColor="#F6F2F2"
-             NavigationPage.HasNavigationBar="False">
+             Shell.NavBarIsVisible="True" 
+             >
     <ContentPage.Content>
         <StackLayout>
 
@@ -27,7 +28,7 @@
 
 
                     <!--NAVIGATION BAR-->
-                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Padding="6" BackgroundColor="#C9E265">
+                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Padding="6" BackgroundColor="Coral">
                         <ImageButton Source="hamburgerMENU.png" BackgroundColor="Transparent" 
                                      HorizontalOptions="Start"  HeightRequest="40" Clicked="Button_HamMenu"/>
                     </Grid>
