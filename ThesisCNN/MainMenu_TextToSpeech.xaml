@@ -20,18 +20,15 @@
                     <!--MAIN MENU-->
                     <RowDefinition Height="250"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
-                </Grid.ColumnDefinitions>
 
                 <!--BODY-->
                 <!--TO FIX TEXT TO SPEECH-->
-                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid Grid.Row="0" Grid.Column="0" >
                     <!--INSERT CODE HERE-->
                     <Label Grid.Row="1" Grid.Column="0"  Text="Text to Speech" HorizontalTextAlignment="Center" 
                             FontAttributes="Bold" TextColor="Black" FontSize="30" VerticalTextAlignment="Center"/>
 
-                    <Grid Grid.Row="2" Grid.Column="0"  >
+                    <Grid Grid.Row="2" Grid.Column="0" >
                         <Entry x:Name="SpeechInput"
                            Placeholder="Enter Text"
                            WidthRequest="250"
@@ -51,7 +48,7 @@
 
 
                 <!--MAIN MENU-->
-                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid Grid.Row="1" Grid.Column="0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="5"/>

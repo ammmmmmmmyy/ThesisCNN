@@ -2,20 +2,75 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ThesisCNN"
-             x:Class="ThesisCNN.MainMenu_SpeechTextTrans">
+             x:Class="ThesisCNN.MainMenu_SpeechTextTrans"
+             BackgroundColor="#F6F2F2">
 
     <ContentPage.Content>
-        <StackLayout Margin="10,50,10,10">
-            <Button
-            x:Name="start"
-            Text="Start"
-            Clicked="Start_Clicked"/>
-            
-            <Label 
-            x:Name="recon"
-            Text="Recognized text" 
-           HorizontalOptions="Center"
-           VerticalOptions="Center" />
+        <StackLayout>
+            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="618"/>
+                    <RowDefinition Height="98"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.Column="0" >
+                    <Grid.RowDefinitions>
+                        <!--SPACE-->
+                        <RowDefinition Height="20"/>
+                        <!--SPACE-->
+                        <RowDefinition Height="533"/>
+                        <!--BOTTOM-->
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+
+                    
+                    <!--TEXT-->
+                    <Grid Grid.Row="1" Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <!--SPACE-->
+                            <RowDefinition Height="21"/>
+                            <!--TEXT-->
+                            <RowDefinition Height="400"/>
+                            <!--BOTTON-->
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <!--SPACE-->
+                            <ColumnDefinition Width="21"/>
+                            <ColumnDefinition Width="21"/>
+                            <!--SPACE-->
+                            <ColumnDefinition Width="283"/>
+                            <!--SPACE-->
+                            <ColumnDefinition Width="21"/>
+                            <ColumnDefinition Width="21"/>
+                        </Grid.ColumnDefinitions>
+                        <!--BOX-->
+                        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3">
+                            <BoxView BackgroundColor="White" CornerRadius="15"/>
+                        </Grid>
+                        <!--TEXT-->
+                        <Grid Grid.Row="1" Grid.Column="2" >
+                            <Label x:Name="recon" Text="Recognized text" HorizontalOptions="Center"
+                           VerticalOptions="Center" FontSize="20"/>
+                        </Grid>
+                        <!--START BUTTON-->
+                        <Grid Grid.Row="2" Grid.Column="2" VerticalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55"/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Grid.Column="0" x:Name="start" Text="Start" 
+                            Clicked="Start_Clicked" Margin="80,0,80,0" CornerRadius="12"
+                            BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold"/>
+                        </Grid>
+                    </Grid>
+                    
+                </Grid>
+
+
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <BoxView BackgroundColor="White"/>
+                </Grid>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

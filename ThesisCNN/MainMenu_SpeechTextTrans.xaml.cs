@@ -63,5 +63,7 @@ namespace ThesisCNN
                 start.IsEnabled = false;
             }
         }
+
+        
     }
 }
