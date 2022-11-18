@@ -75,12 +75,7 @@ namespace ThesisCNN
         {
             await Shell.Current.GoToAsync($"//{nameof(MainMenu_TextToSpeech)}");
         }
-        //HAMBURGER MENU
-        private void Button_HamMenu(object sender, EventArgs e)
-        {
-            Shell.Current.FlyoutIsPresented = true;
-        }
-
+        
         //NAV:SPEECH TO TEXT PAGE
         private void Button_text_speech(object sender, EventArgs e)
         {

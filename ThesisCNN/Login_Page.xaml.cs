@@ -16,9 +16,9 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
-        private void Register_Clicked(object sender, EventArgs e)
+        private async void Register_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_NoiseReduct());
+            await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
         }
         private void tapGes_signUp(object sender, EventArgs e)
         {

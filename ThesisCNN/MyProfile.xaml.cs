@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Windows.Input;
 
 namespace ThesisCNN
 {
@@ -15,10 +16,10 @@ namespace ThesisCNN
         public MyProfile()
         {
             InitializeComponent();
+            this.BindingContext = this;
         }
-        private void Button_backArrow(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MainMenu_NoiseReduct());
-        }
+        //Back button
+        public ICommand GoBackCommand => new Command(async () => await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}"));
+        
     }
 }

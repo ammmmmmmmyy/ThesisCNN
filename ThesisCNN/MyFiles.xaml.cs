@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,10 +15,10 @@ namespace ThesisCNN
         public MyFiles()
         {
             InitializeComponent();
+            this.BindingContext = this;
         }
-        private void Button_arrowBack(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MainMenu_NoiseReduct());
-        }
+        //Back button
+        public ICommand GoBackCommand => new Command(async () => await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}"));
+        
     }
 }

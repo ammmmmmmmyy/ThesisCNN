@@ -3,31 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ThesisCNN.MyFiles"
              BackgroundColor="#F6F2F2"
-             NavigationPage.HasNavigationBar="False">
+             Shell.FlyoutBehavior="Disabled">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}" IconOverride="back_arrow.png"/>
+    </Shell.BackButtonBehavior>
+     
     <ContentPage.Content>
         <StackLayout>
             <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
                 <Grid.RowDefinitions>
-                    <!--NAVIGATION BAR-->
-                    <RowDefinition Height="60"/>
                     <!--BODY-->
-                    <RowDefinition Height="620"/>
+                    <RowDefinition Height="636"/>
                     <!--BOTTOM BAR-->
-                    <RowDefinition Height="86"/>
+                    <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
 
-                <!--NAVIGATION BAR-->
-                <Grid Grid.Row="0" Grid.Column="0" Padding="6" BackgroundColor="#C9E265">
-                    <ImageButton Source="back_arrow.png" BackgroundColor="Transparent" Padding="10"
-                                     HorizontalOptions="Start"  HeightRequest="40" Clicked="Button_arrowBack"/>
-                </Grid>
                 <!--BODY-->
-                <Grid Grid.Row="1" Grid.Column="0">
+                <Grid Grid.Row="0" Grid.Column="0">
                     <Label Grid.Row="0" Grid.Column="0" Text="MY FILES" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                             FontAttributes="Bold" TextColor="Black" FontSize="30" />
                 </Grid>
                 <!--BOTTOM BAR-->
-                <Grid Grid.Row="2" Grid.Column="0">
+                <Grid Grid.Row="1" Grid.Column="0">
                     <Label Grid.Row="0" Grid.Column="0" BackgroundColor="White"/>
                 </Grid>
             </Grid>
