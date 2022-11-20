@@ -3,9 +3,33 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:ThesisCNN"
        x:Class="ThesisCNN.Hamburger_Menu_Shell"
-       BackgroundColor="#C9E265"
-       Shell.ForegroundColor="Black">
+       Shell.ForegroundColor="Black"
+       Shell.BackgroundColor="#C9E265"
+       FlyoutBackgroundColor="#B6CC5F">
 
+    <Shell.FlyoutHeader>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!---->
+                <RowDefinition Height="20"/>
+                <!--MY PROFILE PIC-->
+                <RowDefinition Height="180"/>
+                <!---->
+                <RowDefinition Height="10"/>
+                <!--USER NAME-->
+                <RowDefinition Height="30"/>
+                <!---->
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="1">
+                <ImageButton Source="icon_profilePic.png" BackgroundColor="Transparent"/>
+            </Grid>
+            <Grid Grid.Row="3" HorizontalOptions="Center">
+                <Label Text="Users Name" FontSize="20" TextColor="Black"/>
+            </Grid>
+        </Grid>
+    </Shell.FlyoutHeader>
     <!---->
     <ShellItem Route="SignUP_Page" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:SignUP_Page}"/>
@@ -24,33 +48,17 @@
     <ShellItem Route="MainMenu_TextToSpeech" FlyoutItemIsVisible="False" >
         <ShellContent ContentTemplate="{DataTemplate local:MainMenu_TextToSpeech}"/>
     </ShellItem>
-    <!--
-    <FlyoutItem Title="NoiseReduction" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_NoiseReduct}" Route="MainMenu_NoiseReduct"/>
-    </FlyoutItem>
-    <FlyoutItem Title="MainMenu_SignLangCapture" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SignLangCapture}" Route="MainMenu_SignLangCapture"/>
-    </FlyoutItem>
-    <FlyoutItem Title="MainMenu_TextToSpeech" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_TextToSpeech}" Route="MainMenu_TextToSpeech"/>
-    </FlyoutItem>
-    <FlyoutItem Title="MainMenu_SpeechTextTrans" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SpeechTextTrans}" Route="MainMenu_SpeechTextTrans"/>
-    </FlyoutItem>
-    -->
-    
-    
+
+
     <!--HAMBURGER MENU PAGES-->
-    <FlyoutItem Title="MY FILES" Icon="icon_myFiles.png" >
-        <ShellContent ContentTemplate="{DataTemplate local:MyFiles}" Route="MyFiles"/>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent ContentTemplate="{DataTemplate local:MyFiles}" Route="MyFiles"
+                      Icon="icon_myFiles.png" Title="MY FILES"/>
+        <ShellContent ContentTemplate="{DataTemplate local:MyProfile}" Route="MyProfile" 
+                      Icon="icon_myProfile.png" Title="MY PROFILE"/>
+        <ShellContent ContentTemplate="{DataTemplate local:About}" Route="About"
+                      Icon="icon_about.png" Title="ABOUT"/>
     </FlyoutItem>
-    <FlyoutItem Title="MY PROFILE" Icon="icon_myProfile.png">
-        <ShellContent ContentTemplate="{DataTemplate local:MyProfile}" Route="MyProfile"/>
-    </FlyoutItem>
-    <FlyoutItem Title="ABOUT" Icon="icon_about.png">
-        <ShellContent ContentTemplate="{DataTemplate local:About}" Route="About"/>
-    </FlyoutItem>
-    <FlyoutItem Title="LOGOUT" Icon="logout.png">
-        <ShellContent ContentTemplate="{DataTemplate local:Login_Page}" Route="Login_Page"/>
-    </FlyoutItem>
+    <ShellContent ContentTemplate="{DataTemplate local:Login_Page}" Route="Login_Page"
+                      Icon="logout.png" Title="LOGOUT"/>
 </Shell>
