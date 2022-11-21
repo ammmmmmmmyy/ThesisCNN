@@ -3,57 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ThesisCNN"
              x:Class="ThesisCNN.MainMenu_SpeechTextTrans"
-             BackgroundColor="#F6F2F2">
+             BackgroundColor="#F6F2F2"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             >
 
     <ContentPage.Content>
         <StackLayout>
+            
             <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="618"/>
-                    <RowDefinition Height="98"/>
+                    <!--BODY-->
+                    <RowDefinition Height="56"/>
+                    <!--BODY-->
+                    <RowDefinition Height="466"/>
+                    <!--MAIN MENU-->
+                    <RowDefinition Height="250"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Grid.Column="0" >
-                    <Grid.RowDefinitions>
-                        <!--SPACE-->
-                        <RowDefinition Height="20"/>
-                        <!--SPACE-->
-                        <RowDefinition Height="533"/>
-                        <!--BOTTOM-->
-                        <RowDefinition Height="100"/>
-                    </Grid.RowDefinitions>
+                <!--NAV BAR-->
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <BoxView BackgroundColor="#C9E265"/>
+                    <ImageButton Source="text_speech.png" BackgroundColor="Transparent"
+                                 Margin="340,0,10,0" Clicked="Button_text_speech"/>
+                </Grid>
 
-                    
-                    <!--TEXT-->
-                    <Grid Grid.Row="1" Grid.Column="0" >
+                <!--BODY-->
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <!--INSERT CODE HERE-->
+                    <Grid>
                         <Grid.RowDefinitions>
-                            <!--SPACE-->
-                            <RowDefinition Height="21"/>
-                            <!--TEXT-->
-                            <RowDefinition Height="400"/>
-                            <!--BOTTON-->
-                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="310"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <!--SPACE-->
                             <ColumnDefinition Width="21"/>
-                            <ColumnDefinition Width="21"/>
-                            <!--SPACE-->
-                            <ColumnDefinition Width="283"/>
-                            <!--SPACE-->
-                            <ColumnDefinition Width="21"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="21"/>
                         </Grid.ColumnDefinitions>
-                        <!--BOX-->
-                        <Grid Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3">
-                            <BoxView BackgroundColor="White" CornerRadius="15"/>
-                        </Grid>
+
+                        <BoxView Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="3" 
+                                 BackgroundColor="White" CornerRadius="15"/>
                         <!--TEXT-->
-                        <Grid Grid.Row="1" Grid.Column="2" >
+                        <Grid Grid.Row="2" Grid.Column="2" BackgroundColor="LightGray">
                             <Label x:Name="recon" Text="Recognized text" HorizontalOptions="Center"
-                           VerticalOptions="Center" FontSize="20"/>
+                           VerticalOptions="Center" FontSize="20" TextColor="Black" />
                         </Grid>
                         <!--START BUTTON-->
-                        <Grid Grid.Row="2" Grid.Column="2" VerticalOptions="Center">
+                        <Grid Grid.Row="3" Grid.Column="2" VerticalOptions="Center" BackgroundColor="Transparent">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="55"/>
                             </Grid.RowDefinitions>
@@ -62,13 +61,49 @@
                             BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold"/>
                         </Grid>
                     </Grid>
-                    
                 </Grid>
+                <!--END: BODY-->
+
+                <!--MAIN MENU-->
+                <Grid Grid.Row="2" Grid.Column="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="78"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="17"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="70"/>
+
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="17"/>
+                    </Grid.ColumnDefinitions>
+
+                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" Grid.RowSpan="2" BackgroundColor="White"/>
+
+                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_hearing.png" 
+                             BackgroundColor="Transparent" IsVisible="false" IsEnabled="False"
+                             x:Name="button_noiseReduction" Clicked="Clicked_button_noiseReduction"/>
+
+                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_cam.png" BackgroundColor="Transparent"
+                             x:Name="button_cam" Clicked="Clicked_button_cam" IsVisible="false" IsEnabled="False"/>
+
+                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_speech.png" BackgroundColor="Transparent"
+                             x:Name="button_speech" Clicked="Clicked_button_speech" IsVisible="false" IsEnabled="False"/>
 
 
-                <Grid Grid.Row="1" Grid.Column="0">
-                    <BoxView BackgroundColor="White"/>
+                    <ImageButton Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3" 
+                             Source="menu_speech.png" BackgroundColor="Transparent"
+                             Clicked="Button_mainmenu"/>
                 </Grid>
+                <!--END: MAIN MENU-->
 
             </Grid>
         </StackLayout>

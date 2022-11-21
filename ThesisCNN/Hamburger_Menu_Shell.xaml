@@ -39,7 +39,7 @@
     </ShellItem>
     
     <!--MAIN MENU PAGES-->
-    <ShellItem Route="MainMenu_NoiseReduct" FlyoutItemIsVisible="False" >
+    <ShellItem Route="MainMenu_NoiseReduct" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:MainMenu_NoiseReduct}"/>
     </ShellItem>
     <ShellItem Route="MainMenu_SignLangCapture" FlyoutItemIsVisible="False" >
@@ -47,6 +47,9 @@
     </ShellItem>
     <ShellItem Route="MainMenu_TextToSpeech" FlyoutItemIsVisible="False" >
         <ShellContent ContentTemplate="{DataTemplate local:MainMenu_TextToSpeech}"/>
+    </ShellItem>
+    <ShellItem Route="MainMenu_SpeechTextTrans" FlyoutItemIsVisible="False" >
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SpeechTextTrans}"/>
     </ShellItem>
 
 
