@@ -16,5 +16,10 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Shell.Current.FlyoutIsPresented = false;
+        }
     }
 }

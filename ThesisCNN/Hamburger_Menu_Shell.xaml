@@ -11,21 +11,39 @@
         <Grid>
             <Grid.RowDefinitions>
                 <!---->
-                <RowDefinition Height="20"/>
-                <!--MY PROFILE PIC-->
-                <RowDefinition Height="180"/>
+                <RowDefinition Height="5"/>
+                <!--BACK BUTTON-->
+                <RowDefinition Height="30"/>
                 <!---->
-                <RowDefinition Height="10"/>
+                <RowDefinition Height="8"/>
+                <!--MY PROFILE PIC-->
+                <RowDefinition Height="190"/>
+                <!---->
+                <RowDefinition Height="6"/>
                 <!--USER NAME-->
                 <RowDefinition Height="30"/>
                 <!---->
                 <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             
+            <!--BACK BUTTON-->
             <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="1" Source="back_arroww"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="BACK" FontSize="20"
+                       TextColor="Black" />
+                <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
+                        BackgroundColor="Transparent" Clicked="Button_Clicked"/>
+            </Grid>
+            <!--MY PROFILE PIC-->
+            <Grid Grid.Row="3">
                 <ImageButton Source="icon_profilePic.png" BackgroundColor="Transparent"/>
             </Grid>
-            <Grid Grid.Row="3" HorizontalOptions="Center">
+            <!--USER NAME-->
+            <Grid Grid.Row="5" HorizontalOptions="Center">
                 <Label Text="Users Name" FontSize="20" TextColor="Black"/>
             </Grid>
         </Grid>
