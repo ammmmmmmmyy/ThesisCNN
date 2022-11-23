@@ -77,9 +77,9 @@ namespace ThesisCNN
         }
         
         //NAV:SPEECH TO TEXT PAGE
-        private void Button_text_speech(object sender, EventArgs e)
+        private async void Button_text_speech(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainMenu_SpeechTextTrans());
+            await Shell.Current.GoToAsync($"//{nameof(MainMenu_SpeechTextTrans)}");
         }
     }
 }

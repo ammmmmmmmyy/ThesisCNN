@@ -4,31 +4,27 @@
              xmlns:local="clr-namespace:ThesisCNN"
              x:Class="ThesisCNN.MainMenu_SpeechTextTrans"
              BackgroundColor="#F6F2F2"
-             Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="False"
              >
 
+    <Shell.TitleView>
+        <AbsoluteLayout>
+            <ImageButton Source="text_speech.png" AbsoluteLayout.LayoutFlags="PositionProportional"
+                      AbsoluteLayout.LayoutBounds="0.99,0.3,40,40" Clicked="Button_text_speech"/>
+        </AbsoluteLayout>
+    </Shell.TitleView>
+    
     <ContentPage.Content>
         <StackLayout>
             
             <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
                 <Grid.RowDefinitions>
                     <!--BODY-->
-                    <RowDefinition Height="56"/>
-                    <!--BODY-->
                     <RowDefinition Height="466"/>
                     <!--MAIN MENU-->
                     <RowDefinition Height="250"/>
                 </Grid.RowDefinitions>
-                <!--NAV BAR-->
-                <Grid Grid.Row="0" Grid.Column="0">
-                    <BoxView BackgroundColor="#C9E265"/>
-                    <ImageButton Source="text_speech.png" BackgroundColor="Transparent"
-                                 Margin="340,0,10,0" Clicked="Button_text_speech"/>
-                </Grid>
-
                 <!--BODY-->
-                <Grid Grid.Row="1" Grid.Column="0">
+                <Grid Grid.Row="0" Grid.Column="0">
                     <!--INSERT CODE HERE-->
                     <Grid>
                         <Grid.RowDefinitions>
@@ -65,7 +61,7 @@
                 <!--END: BODY-->
 
                 <!--MAIN MENU-->
-                <Grid Grid.Row="2" Grid.Column="0" >
+                <Grid Grid.Row="1" Grid.Column="0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="5"/>
