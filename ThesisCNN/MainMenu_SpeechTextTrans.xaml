@@ -28,7 +28,7 @@
                     <!--INSERT CODE HERE-->
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="50"/>
                             <RowDefinition Height="10"/>
                             <RowDefinition Height="310"/>
                         </Grid.RowDefinitions>
@@ -39,11 +39,16 @@
                             <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="21"/>
                         </Grid.ColumnDefinitions>
+                        
+                        <!--TEXT: SPECCH TO TEXT-->
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  
+                               Text="SPEECH TO TEXT" HorizontalOptions="Center" VerticalOptions="Center"
+                               FontSize="18" FontAttributes="Bold" TextColor="Black"/>
 
                         <BoxView Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="3" 
                                  BackgroundColor="White" CornerRadius="15"/>
                         <!--TEXT-->
-                        <Grid Grid.Row="2" Grid.Column="2" BackgroundColor="LightGray">
+                        <Grid Grid.Row="2" Grid.Column="2" BackgroundColor="#EBEBEB">
                             <Label x:Name="recon" Text="Recognized text" HorizontalOptions="Center"
                            VerticalOptions="Center" FontSize="20" TextColor="Black" />
                         </Grid>
