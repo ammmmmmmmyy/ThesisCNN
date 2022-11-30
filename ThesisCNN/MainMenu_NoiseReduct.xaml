@@ -12,50 +12,38 @@
             <Grid>
                 <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Grid.RowDefinitions>
+                        <!--BOX 1 NOISE REDUCTION-->
+                        <RowDefinition Height="236"/>
+                        <!--BOX 2 EQUALIZER-->
+                        <RowDefinition Height="180"/>
                         <!--SWITCH-->
                         <RowDefinition Height="40"/>
-                        <!--BOX 1 NOISE REDUCTION-->
-                        <RowDefinition Height="226"/>
-                        <!--BOX 2 EQUALIZER-->
-                        <RowDefinition Height="200"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
 
-                    <!--SWITCH-->
-                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="280"/>
-                            <ColumnDefinition Width="44"/>
-                            <ColumnDefinition Width="30"/>
-                        </Grid.ColumnDefinitions>
+                    <!--BUTTON-->
+                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="8"/>
-                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="45"/>
                         </Grid.RowDefinitions>
 
-                        <BoxView Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#D9D9D9"
-                         CornerRadius="15"/>
-                        <Switch Grid.Column="1" Grid.Row="1" IsToggled="True" HorizontalOptions="End"
-                        ThumbColor="#C9E265" Toggled="Switch_toggled"/>
-
-                        <Label Grid.Column="2" Grid.Row="1" Text="on" FontAttributes="Bold" TextColor="Black"
-                        Margin="0,2,0,0" FontSize="15" HorizontalTextAlignment="Start" x:Name="switchState"/>
+                        <Button Grid.Row="0" Grid.Column="0" Text="..." Margin="20,0,20,0"/>
                     </Grid>
 
                     <!--BOX 1 NOISE REDUCTION-->
-                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,0" x:Name="aa">
+                    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,0" x:Name="aa">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
-                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="30"/>
                             <RowDefinition Height="1"/>
 
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="0"/>
                             <RowDefinition Height="45"/>
-                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="15"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="10"/>
@@ -68,10 +56,31 @@
                         </Grid.ColumnDefinitions>
                         <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="7" 
                          BackgroundColor="White" CornerRadius="15"/>
+                        <!--SWITCH-->
+                        <Grid Grid.Row="0" Grid.ColumnSpan="6" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="260"/>
+                                <ColumnDefinition Width="44"/>
+                                <ColumnDefinition Width="30"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
 
+                            <BoxView Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#D9D9D9"
+                                     CornerRadius="15"/>
+                            <Switch Grid.Column="1" Grid.Row="1" IsToggled="True" HorizontalOptions="End"
+                                     ThumbColor="#C9E265" Toggled="Switch_toggled"/>
+
+                            <Label Grid.Column="2" Grid.Row="1" Text="on" FontAttributes="Bold" TextColor="Black"
+                                   Margin="0,2,0,0" FontSize="15" HorizontalTextAlignment="Start" x:Name="switchState"/>
+                        </Grid>
+
+                        <!--TEXT-->
                         <Label Grid.Row="1" Grid.ColumnSpan="6" Text="Noise Reduction" 
                        FontSize="28" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"/>
-
+                        <!--TEXT-->
                         <Label Grid.Row="3" Grid.ColumnSpan="6" Text="Strength of noise reduction" 
                        FontSize="15" TextColor="Gray" HorizontalOptions="Center"/>
 
@@ -88,7 +97,7 @@
                     </Grid>
 
                     <!--BOX 2 EQUALIZER-->
-                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,10,20,0" >
+                    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,20,0" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="10"/>
                             <RowDefinition Height="35"/>
@@ -100,7 +109,7 @@
                             <RowDefinition Height="19"/>
                             <RowDefinition Height="0"/>
                             <RowDefinition Height="13"/>
-                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="10"/>
                         </Grid.RowDefinitions>
 
                         <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="11" Grid.ColumnSpan="1"
@@ -130,7 +139,7 @@
                             <RowDefinition Height="5"/>
                             <RowDefinition Height="5"/>
                             <RowDefinition Height="60"/>
-                            <RowDefinition Height="78"/>
+                            <RowDefinition Height="88"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="17"/>
