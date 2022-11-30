@@ -24,23 +24,53 @@
                 <!--BODY-->
                 <Grid Grid.Row="0" Grid.Column="0" >
                     <!--INSERT CODE HERE-->
-                    <Label Grid.Row="1" Grid.Column="0"  Text="Text to Speech" HorizontalTextAlignment="Center" 
-                            FontAttributes="Bold" TextColor="Black" FontSize="30" VerticalTextAlignment="Center"/>
+                    
 
-                    <Grid Grid.Row="2" Grid.Column="0" >
-                        <Entry x:Name="SpeechInput"
-                           Placeholder="Enter Text"
-                           WidthRequest="250"
-                           />
-                    </Grid>
-                    <Grid Grid.Row="3" Grid.Column="0" >
-                        <Button x:Name="SpeechOutput"
-                            Text="Speak for Me!"
-                            TextTransform="None"
-                            HeightRequest="50"
-                            WidthRequest="250"
-                            Clicked="SpeechButtonPressed"
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="310"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="21"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="21"/>
+                        </Grid.ColumnDefinitions>
+                        <!--TEXT: TEXT TO SPEECH-->
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  
+                               Text="TEXT TO SPEECH" HorizontalOptions="Center" VerticalOptions="Center"
+                               FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+
+                        <BoxView Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="3" 
+                                 BackgroundColor="White" CornerRadius="15"/>
+
+                        <!--INPUT TEXT-->
+                        <Grid Grid.Row="2" Grid.Column="2" BackgroundColor="#EBEBEB" Padding="10,0,10,0" 
+                              VerticalOptions="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="300"/>
+                            </Grid.RowDefinitions>
+                            <Editor Grid.Row="0" Grid.Column="0" x:Name="SpeechInput" Placeholder="Enter Text" />
+                        </Grid>
+                        <!--SPEAK FOR ME!-->
+                        <Grid Grid.Row="3" Grid.Column="2" VerticalOptions="Center" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="55"/>
+                            </Grid.RowDefinitions>
+                            
+                            <Button Grid.Row="0" Grid.Column="0" x:Name="SpeechOutput"
+                            Text="Speak for Me!" TextTransform="None" HeightRequest="50" WidthRequest="250"
+                            Clicked="SpeechButtonPressed" Margin="60,0,60,0" CornerRadius="12"
+                            BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold"
                             />
+                        </Grid>
                     </Grid>
                     <!--END: BODY-->
                 </Grid>
