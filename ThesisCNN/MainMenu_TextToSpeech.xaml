@@ -22,7 +22,6 @@
                 </Grid.RowDefinitions>
 
                 <!--BODY-->
-                <!--TO FIX TEXT TO SPEECH-->
                 <Grid Grid.Row="0" Grid.Column="0" >
                     <!--INSERT CODE HERE-->
                     <Label Grid.Row="1" Grid.Column="0"  Text="Text to Speech" HorizontalTextAlignment="Center" 

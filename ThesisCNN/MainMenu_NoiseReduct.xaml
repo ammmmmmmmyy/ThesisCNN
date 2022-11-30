@@ -26,7 +26,6 @@
 
                     <!--SWITCH-->
                     <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="280"/>
                             <ColumnDefinition Width="44"/>

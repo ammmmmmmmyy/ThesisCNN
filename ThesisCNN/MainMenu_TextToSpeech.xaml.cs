@@ -16,6 +16,7 @@ namespace ThesisCNN
         public MainMenu_TextToSpeech()
         {
             InitializeComponent();
+
             TextToSpeech.SpeakAsync("Hello User");
         }
         //Text to Speech
