@@ -13,11 +13,11 @@
                 <Grid  HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Grid.RowDefinitions>
                         <!--BOX 1 NOISE REDUCTION-->
-                        <RowDefinition Height="236"/>
+                        <RowDefinition Height="226"/>
                         <!--BOX 2 EQUALIZER-->
-                        <RowDefinition Height="180"/>
+                        <RowDefinition Height="185"/>
                         <!--SWITCH-->
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="45"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="300"/>
@@ -25,18 +25,29 @@
 
 
                     <!--BUTTON-->
-                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
+                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="45"/>
                         </Grid.RowDefinitions>
 
-                        <Button Grid.Row="0" Grid.Column="0" Text="..." Margin="20,0,20,0"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="220"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Row="0" Grid.Column="1" Text="RECORD"
+                                BackgroundColor="#C9E265" CornerRadius="30"/>
+                        <Label Grid.Row="0" Grid.Column="2"/>
+                        <Image Grid.Row="0" Grid.Column="3" Source="play_button" HorizontalOptions="StartAndExpand"
+                               VerticalOptions="Center" Margin="0,6,20,6" />
                     </Grid>
 
                     <!--BOX 1 NOISE REDUCTION-->
                     <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,20,20,0" x:Name="aa">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="43"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="1"/>
 
@@ -70,11 +81,11 @@
 
                             <BoxView Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="#D9D9D9"
                                      CornerRadius="15"/>
-                            <Switch Grid.Column="1" Grid.Row="1" IsToggled="True" HorizontalOptions="End"
+                            <Switch Grid.Column="1" Grid.Row="1" IsToggled="False" HorizontalOptions="End"
                                      ThumbColor="#C9E265" Toggled="Switch_toggled"/>
 
-                            <Label Grid.Column="2" Grid.Row="1" Text="on" FontAttributes="Bold" TextColor="Black"
-                                   Margin="0,2,0,0" FontSize="15" HorizontalTextAlignment="Start" x:Name="switchState"/>
+                            <Label Grid.Column="2" Grid.Row="1" Text="off" FontAttributes="Bold" TextColor="Black"
+                                   Margin="0,3,0,0" FontSize="15" HorizontalTextAlignment="Start" x:Name="switchState"/>
                         </Grid>
 
                         <!--TEXT-->
@@ -87,19 +98,19 @@
                         <!--BUTTON NOISE REDUCTION-->
                         <Button Grid.Row="5" Grid.Column="1" BackgroundColor="#C9E265" CornerRadius="10" 
                         Clicked="Button_noiseReduction_low" x:Name="button_low" Text="Low" TextTransform="None"
-                        FontSize="19" FontAttributes="Bold" />
+                        FontSize="19" FontAttributes="Bold" IsEnabled="False"/>
                         <Button Grid.Row="5" Grid.Column="3" BackgroundColor="#C9E265" CornerRadius="10"
                         Clicked="Button_noiseReduction_medium" x:Name="button_medium" TextTransform="None"
-                        FontSize="19" FontAttributes="Bold" Text="Medium"/>
+                        FontSize="19" FontAttributes="Bold" Text="Medium" IsEnabled="False"/>
                         <Button Grid.Row="5" Grid.Column="5" BackgroundColor="#C9E265" CornerRadius="10"
                         Clicked="Button_noiseReduction_high" x:Name="button_high" TextTransform="None"
-                        FontSize="19" FontAttributes="Bold" Text="High"/>
+                        FontSize="19" FontAttributes="Bold" Text="High" IsEnabled="False"/>
                     </Grid>
 
                     <!--BOX 2 EQUALIZER-->
                     <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="20,0,20,0" >
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="8"/>
                             <RowDefinition Height="35"/>
                             <RowDefinition Height="0"/>
                             <RowDefinition Height="18"/>

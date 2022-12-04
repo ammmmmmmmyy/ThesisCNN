@@ -142,5 +142,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\menu_hearing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

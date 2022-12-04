@@ -5,6 +5,7 @@
              Shell.FlyoutBehavior="Disabled"
              Shell.BackgroundColor="White"
              BackgroundColor="#F6F2F2"
+             Shell.TabBarIsVisible="False"
              >
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding GoBackCommand}" IconOverride="back_arrow.png"/>
