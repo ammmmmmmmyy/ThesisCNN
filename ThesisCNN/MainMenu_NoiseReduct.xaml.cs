@@ -58,9 +58,9 @@ namespace ThesisCNN
                 button_speech.IsVisible = true;
 
                 await Task.WhenAll(
-                    button_noiseReduction.TranslateTo(0, -90, 500),
-                    button_cam.TranslateTo(130, 0, 500),
-                    button_speech.TranslateTo(-130, 0, 500)
+                    button_noiseReduction.TranslateTo(0, -90, 300),
+                    button_cam.TranslateTo(130, 0, 300),
+                    button_speech.TranslateTo(-130, 0, 300)
                     );
 
                 button_noiseReduction.IsEnabled = true;
