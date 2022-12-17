@@ -49,7 +49,7 @@
                                  BackgroundColor="White" CornerRadius="15"/>
                         <!--TEXT-->
                         <Grid Grid.Row="2" Grid.Column="2" BackgroundColor="#EBEBEB">
-                            <Label x:Name="recon" Text="Recognized text" HorizontalOptions="Center"
+                            <Label Margin="10,10,10,10" x:Name="recon" Text="Recognized text" HorizontalOptions="Center"
                            VerticalOptions="Center" FontSize="20" TextColor="Black" />
                         </Grid>
                         <!--START BUTTON-->
