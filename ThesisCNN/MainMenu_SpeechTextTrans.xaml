@@ -9,7 +9,7 @@
     <Shell.TitleView>
         <AbsoluteLayout>
             <ImageButton Source="text_speech.png" AbsoluteLayout.LayoutFlags="PositionProportional"
-                      AbsoluteLayout.LayoutBounds="0.99,0.3,40,40" Clicked="Button_text_speech"/>
+                      AbsoluteLayout.LayoutBounds="0.97,0.3,40,40" Clicked="Button_text_speech"/>
         </AbsoluteLayout>
     </Shell.TitleView>
     
