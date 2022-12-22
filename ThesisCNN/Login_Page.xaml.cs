@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
+using System.IO;
 
 namespace ThesisCNN
 {
@@ -16,10 +18,50 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
+        //REGISTRATION
         private async void Register_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactData.db");
+            var db = new SQLiteConnection(dbpath);
+            if (IsTableExists("Contact") == true)
+            {
+                //CHECKS IF THE PROVIDED EMAIL & PASSWORD EXIST
+                var pincodequery = db.Table<Contact>().Where(a => a.Email == logIn_email.Text).Where(b => b.Password == logIn_pass.Text).FirstOrDefault();
+                if (pincodequery != null )
+                {
+                    await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                }
+                else
+                {
+                    await DisplayAlert("Notification", "Account does not exist", "OK");
+                }
+            }
+            //
+            
         }
+        //
+        private bool IsTableExists(string v)
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactData.db");
+            var db = new SQLiteConnection(dbpath);
+            try
+            {
+                var tableInfo = db.GetTableInfo("Contact");
+                if (tableInfo.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        //
         private void tapGes_signUp(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignUP_Page());

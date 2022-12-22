@@ -50,10 +50,10 @@
     </Shell.FlyoutHeader>
     <!---->
     <ShellItem Route="SignUP_Page" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:SignUP_Page}"/>
+        <ShellContent ContentTemplate="{DataTemplate local:Login_Page}"/>
     </ShellItem>
     <ShellItem Route="Login_Page" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:Login_Page}"/>
+        <ShellContent ContentTemplate="{DataTemplate local:SignUP_Page}"/>
     </ShellItem>
     
     <!--MAIN MENU PAGES-->
