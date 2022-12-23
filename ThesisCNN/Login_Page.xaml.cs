@@ -23,17 +23,25 @@ namespace ThesisCNN
         {
             string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactData.db");
             var db = new SQLiteConnection(dbpath);
-            if (IsTableExists("Contact") == true)
+
+            if (string.IsNullOrEmpty(logIn_email.Text) || string.IsNullOrEmpty(logIn_pass.Text))
             {
-                //CHECKS IF THE PROVIDED EMAIL & PASSWORD EXIST
-                var pincodequery = db.Table<Contact>().Where(a => a.Email == logIn_email.Text).Where(b => b.Password == logIn_pass.Text).FirstOrDefault();
-                if (pincodequery != null )
+                await DisplayAlert("Notification", "Please complete the following.", "OK");
+            }
+            else
+            {
+                if (IsTableExists("Contact") == true)
                 {
-                    await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
-                }
-                else
-                {
-                    await DisplayAlert("Notification", "Account does not exist", "OK");
+                    //CHECKS IF THE PROVIDED EMAIL & PASSWORD EXIST
+                    var pincodequery = db.Table<Contact>().Where(a => a.Email == logIn_email.Text).Where(b => b.Password == logIn_pass.Text).FirstOrDefault();
+                    if (pincodequery != null)
+                    {
+                        await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Notification", "Account does not exist", "OK");
+                    }
                 }
             }
             //
