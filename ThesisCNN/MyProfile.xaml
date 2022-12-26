@@ -75,9 +75,10 @@
                     </Grid.RowDefinitions>
                     <!--NAME-->
                     <Label Grid.Row="1" Grid.Column="1" Text="NAME" FontSize="18" />
-                    <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="18" />
+                    <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="18" 
+                           x:Name="change_name"/>
                     <!--EMAIL-->
-                    <Label Grid.Row="3" Grid.Column="1" Text="EMAIL" FontSize="18"/>
+                    <Label Grid.Row="3" Grid.Column="1" Text="EMAIL" FontSize="18" x:Name="nameaaa"/>
                     <Entry Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontSize="20"/>
                 </Grid>
 
@@ -95,8 +96,9 @@
                         <RowDefinition Height="62"/>
                         <!--SAVE BUTTON-->
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Grid.Column="1"  Text="SAVE CHANGES" CornerRadius="12"
-                            BackgroundColor="#C9E265" FontSize="19" FontAttributes="Bold"/>
+                    <Button Grid.Row="0" Grid.Column="1"  Text="SAVE CHANGES" CornerRadius="12" 
+                            BackgroundColor="#C9E265" FontSize="19" FontAttributes="Bold"
+                            Clicked="Button_SaveChanges"/>
                 </Grid>
 
                 <!--TEXT-->

@@ -36,6 +36,14 @@ namespace ThesisCNN
                     var pincodequery = db.Table<Contact>().Where(a => a.Email == logIn_email.Text).Where(b => b.Password == logIn_pass.Text).FirstOrDefault();
                     if (pincodequery != null)
                     {
+                        //
+                        string user_name = pincodequery.Name;
+                        string user_email = pincodequery.Email;
+                        string user_password = pincodequery.Password;
+                        Application.Current.Properties["UserName"] = user_name;
+                        Application.Current.Properties["UserEmail"] = user_email;
+                        Application.Current.Properties["UserPass"] = user_password;
+
                         await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
                     }
                     else
