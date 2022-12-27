@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="ThesisCNN.MainMenu_SignLangCapture"
              Shell.NavBarIsVisible="True"
              BackgroundColor="#F6F2F2"
@@ -23,8 +24,36 @@
                 <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
 
                     <!--INSERT CODE HERE-->
-                    <Label  Text="Add sign language features here" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                            FontAttributes="Bold" TextColor="Black" FontSize="30" />
+                    <xct:CameraView
+                        x:Name="xctCameraView"
+                        CaptureMode="Photo"
+                        MediaCaptured="MediaCaptured"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand" />
+
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="imgViewPanel" Spacing="0">
+                        <Frame Padding="3" BackgroundColor="White" HeightRequest="200" WidthRequest="200">
+                            <StackLayout Spacing="0">
+                                <Image Source="icon.png" Aspect="AspectFit" x:Name="imgView"/>
+                                <Button Text="Close" VerticalOptions="EndAndExpand" Clicked="CloseImageView"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout VerticalOptions="EndAndExpand" Spacing="2" Padding="6">
+                        <Label Text="Video Mode" TextColor="White" FontSize="14" VerticalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Switch Toggled="Switch_Toggled" x:Name="switchMode" VerticalOptions="Center"/>
+                            <Label Text="Image" TextColor="Red" FontSize="14" HorizontalOptions="EndAndExpand" VerticalOptions="Center" x:Name="captureMode"/>
+                        </StackLayout>
+                        <Button Text="Capture" Clicked="CaptureImage" x:Name="captureBtn"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Record Video" Clicked="RecordVideo" IsEnabled="false" x:Name="btnrecordVideo" 
+                            HorizontalOptions="FillAndExpand"/>
+                            <Button Text="Stop Video" Clicked="StopVideo" IsEnabled="False" x:Name="btnstopVideo" 
+                            VerticalOptions="EndAndExpand"  HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
                     <!---->
 
                 </Grid>

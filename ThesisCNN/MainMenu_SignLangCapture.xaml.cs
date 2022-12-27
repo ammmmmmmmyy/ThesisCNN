@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.CommunityToolkit.UI.Views;
+
 
 namespace ThesisCNN
 {
@@ -67,6 +69,53 @@ namespace ThesisCNN
         {
             await Shell.Current.GoToAsync($"//{nameof(MainMenu_TextToSpeech)}");
         }
-        
+        //CAMERA 
+        private void CaptureImage(object sender, EventArgs e)
+        {
+            xctCameraView.Shutter();
+        }
+        private void RecordVideo(object sender, EventArgs e)
+        {
+            xctCameraView.Shutter();
+        }
+        private void StopVideo(object sender, EventArgs e)
+        {
+            xctCameraView.Shutter();
+        }
+
+        private void Switch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (xctCameraView.CaptureMode == CameraCaptureMode.Photo)
+            {
+                captureMode.Text = "Video";
+                xctCameraView.CaptureMode = CameraCaptureMode.Video;
+
+                captureBtn.IsEnabled = false;
+                btnrecordVideo.IsEnabled = true;
+                btnstopVideo.IsEnabled = false;
+            }
+            else
+            {
+                captureMode.Text = "Photo";
+                xctCameraView.CaptureMode = CameraCaptureMode.Photo;
+
+                captureBtn.IsEnabled = true;
+                btnrecordVideo.IsEnabled = false;
+                btnstopVideo.IsEnabled = false;
+            }
+        }
+
+        private void MediaCaptured(object sender, MediaCapturedEventArgs e)
+        {
+
+            imgView.Source = e.Image;
+            imgViewPanel.IsVisible = true;
+        }
+
+        private void CloseImageView(object sender, EventArgs e)
+        {
+            imgViewPanel.IsVisible = false;
+        }
+
     }
 }
