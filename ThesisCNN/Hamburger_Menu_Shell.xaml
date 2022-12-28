@@ -81,5 +81,5 @@
                       Icon="icon_about.png" Title="ABOUT"/>
     </FlyoutItem>
     <ShellContent ContentTemplate="{DataTemplate local:Login_Page}" Route="Login_Page"
-                      Icon="logout.png" Title="LOGOUT"/>
+                      Icon="logout.png" Title="LOGOUT" Appearing="Button_Logout"/>
 </Shell>

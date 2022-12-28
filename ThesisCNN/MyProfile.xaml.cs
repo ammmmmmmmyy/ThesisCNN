@@ -25,7 +25,7 @@ namespace ThesisCNN
         //UPDATES NAME AND EMAIL
         private async void Button_SaveChanges(object sender, EventArgs e)
         {
-            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactData.db");
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactDB.db");
             var db = new SQLiteConnection(dbpath);
 
             string changeName = $"{Application.Current.Properties["UserName"]}";
@@ -33,13 +33,13 @@ namespace ThesisCNN
             string changePass = $"{Application.Current.Properties["UserPass"]}";
 
 
-            var pincodequery = db.Table<Contact>().Where(a => a.Email == changeEmail).Where(b => b.Password == changePass).FirstOrDefault();
+            var pincodequery = db.Table<Contact_loggedIn>().Where(a => a.Email == changeEmail).Where(b => b.Password == changePass).FirstOrDefault();
 
             if (pincodequery != null)
             {
                 if (string.IsNullOrEmpty(change_name.Text) && string.IsNullOrEmpty(change_email.Text))
                 {
-                    await DisplayAlert("Notification", "Please input to update. Thank you!", "OK");
+                    await DisplayAlert("Notification", "Please input data to update. Thank you!", "OK");
                 }
                 else
                 {
