@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.AudioRecorder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace ThesisCNN
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainMenu_NoiseReduct : ContentPage
     {
+
+        private readonly AudioRecorderService audioRecorderService = new AudioRecorderService();
+        private readonly AudioPlayer audioPlayer = new AudioPlayer();
         public MainMenu_NoiseReduct()
         {
             InitializeComponent();
@@ -48,6 +52,35 @@ namespace ThesisCNN
         {
             Navigation.PushAsync(new MainMenu_NoiseReduct());
         }
+
+        //Record/Play button
+        void mediaRecorder(object sender, EventArgs e)
+        {
+            if (audioRecorderService.IsRecording)
+            {
+                mediaRecd.Text = "Record";
+                audioRecorderService.StopRecording();
+            }
+            else
+            {
+                mediaRecd.Text = "Recording";
+                audioRecorderService.StartRecording();
+            }
+        }
+
+        void mediaPlayer(object sender, EventArgs e)
+        {
+            if (audioRecorderService.IsRecording)
+            {
+                mediaRecd.Text = "Record";
+                audioRecorderService.StopRecording();
+            }
+            else
+            {
+                audioPlayer.Play(audioRecorderService.GetAudioFilePath());
+            }
+        }
+
         //MAIN BUTTON
         async void Button_mainmenu(object sender, EventArgs e)
         {
