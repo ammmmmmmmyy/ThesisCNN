@@ -71,8 +71,12 @@ namespace ThesisCNN
                         Application.Current.Properties["UserName"] = user_name;
                         Application.Current.Properties["UserEmail"] = user_email;
                         Application.Current.Properties["UserPass"] = user_password;
-                        
+
+
                         await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+
+                        logIn_email.Text = null;
+                        logIn_pass.Text = null;
                     }
                     else
                     {
@@ -111,7 +115,7 @@ namespace ThesisCNN
         }
         private void tapGes_forgotPass(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUP_Page());
+            Navigation.PushAsync(new Forgot_password());
         }
     }
 }
