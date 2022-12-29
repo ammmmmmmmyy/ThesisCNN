@@ -24,24 +24,24 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <!--BUTTON-->
+                    <!--RECORD/PLAY BUTTON-->
                     <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="45"/>
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="220"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="150"/>
                             <ColumnDefinition Width="10"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="150"/>
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Row="0" Grid.Column="1" Text="RECORD"
-                                BackgroundColor="#C9E265" CornerRadius="30"/>
+                        <Button Grid.Row="0" Grid.Column="1" Text="RECORD" Clicked="mediaRecorder"
+                                BackgroundColor="#C9E265" CornerRadius="30" x:Name="mediaRecd"/>
                         <Label Grid.Row="0" Grid.Column="2"/>
-                        <Image Grid.Row="0" Grid.Column="3" Source="play_button" HorizontalOptions="StartAndExpand"
-                               VerticalOptions="Center" Margin="0,6,20,6" />
+                        <Button Grid.Row="0" Grid.Column="3" Text="PLAY" Clicked="mediaPlayer"
+                                BackgroundColor="#C9E265" CornerRadius="30""/>
                     </Grid>
 
                     <!--BOX 1 NOISE REDUCTION-->
