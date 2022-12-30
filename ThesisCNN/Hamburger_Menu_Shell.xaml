@@ -44,7 +44,7 @@
             </Grid>
             <!--USER NAME-->
             <Grid Grid.Row="5" HorizontalOptions="Center">
-                <Label Text="Users Name" FontSize="20" TextColor="Black"/>
+                <Label Text="Username" FontSize="20" TextColor="Black" x:Name="userName"/>
             </Grid>
         </Grid>
     </Shell.FlyoutHeader>
@@ -58,7 +58,7 @@
     
     <!--MAIN MENU PAGES-->
     <ShellItem Route="MainMenu_NoiseReduct" FlyoutItemIsVisible="False">
-        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_NoiseReduct}"/>
+        <ShellContent ContentTemplate="{DataTemplate local:MainMenu_NoiseReduct}" Appearing="ShellContent_Appearing"/>
     </ShellItem>
     <ShellItem Route="MainMenu_SignLangCapture" FlyoutItemIsVisible="False" >
         <ShellContent ContentTemplate="{DataTemplate local:MainMenu_SignLangCapture}"/>

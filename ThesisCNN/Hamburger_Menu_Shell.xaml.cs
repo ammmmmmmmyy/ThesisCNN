@@ -18,7 +18,6 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
-
         private void Button_Clicked(object sender, EventArgs e)
         {
             Shell.Current.FlyoutIsPresented = false;
@@ -62,7 +61,21 @@ namespace ThesisCNN
                 return false;
             }
         }
-
-        //
+        //USER NAME
+        private void ShellContent_Appearing(object sender, EventArgs e)
+        {
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactDB.db");
+            var db = new SQLiteConnection(dbpath);
+            if (IsTableExists("Contact_loggedIn") == true)
+            {
+                string loggedEmail = $"{Application.Current.Properties["UserEmail"]}";
+                string loggedName = $"{Application.Current.Properties["UserPass"]}";
+                var finduser = db.Table<Contact_loggedIn>().Where(a => a.Email == loggedEmail).Where(b => b.Password == loggedName).FirstOrDefault();
+                if (finduser != null)
+                {
+                    userName.Text = finduser.Name;
+                }
+            }
+        }
     }
 }

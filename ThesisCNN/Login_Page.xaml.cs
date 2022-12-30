@@ -32,7 +32,14 @@ namespace ThesisCNN
                 var findTrue = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_true).FirstOrDefault();
                 if (findTrue != null)
                 {
+                    Application.Current.Properties["UserName"] = findTrue.Name;
+                    Application.Current.Properties["UserEmail"] = findTrue.Email;
+                    Application.Current.Properties["UserPass"] = findTrue.Password;
+
                     await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                   /*
+                   findTrue.Logged_In = "false";
+                   db.Update(findTrue);*/
                 }
                 
             }
@@ -57,13 +64,15 @@ namespace ThesisCNN
                     var pincodequery = db.Table<Contact_loggedIn>().Where(a => a.Email == logIn_email.Text).Where(b => b.Password == logIn_pass.Text).FirstOrDefault();
                     if (pincodequery != null)
                     {
-                        string contactlog_false = "false";
+                        /*string contactlog_false = "false";
                         var setLog = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_false).FirstOrDefault();
                         if (setLog != null)
                         {
                             setLog.Logged_In = "true";
                             db.Update(setLog);
-                        }
+                        }*/
+                        pincodequery.Logged_In = "true";
+                        db.Update(pincodequery);
 
                         string user_name = pincodequery.Name;
                         string user_email = pincodequery.Email;

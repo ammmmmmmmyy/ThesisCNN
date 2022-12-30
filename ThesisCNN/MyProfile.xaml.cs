@@ -49,9 +49,9 @@ namespace ThesisCNN
                         pincodequery.Email = change_email.Text;
                         db.Update(pincodequery);
 
+                        
+
                         await DisplayAlert("Notification", "Email and Name Updated.", "OK");
-                        nameaaa.Text = pincodequery.Name;
-                        emaiilll.Text = pincodequery.Email;
 
                         change_name.Text = null;
                         change_email.Text = null;
@@ -63,7 +63,6 @@ namespace ThesisCNN
                             db.Update(pincodequery);
 
                             await DisplayAlert("Notification", "Email updated.", "OK");
-                            emaiilll.Text = pincodequery.Email;
 
                             change_name.Text = null;
                             change_email.Text = null;
@@ -75,7 +74,6 @@ namespace ThesisCNN
                         db.Update(pincodequery);
 
                         await DisplayAlert("Notification", "Name Updated.", "OK");
-                        nameaaa.Text = pincodequery.Name;
 
                         change_name.Text = null;
                         change_email.Text = null;
