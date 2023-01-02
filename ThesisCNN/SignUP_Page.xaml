@@ -37,7 +37,7 @@
 
 
                 <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Welcome" FontSize="48" TextColor="Black"  
-                   HorizontalTextAlignment="Center" FontAttributes="Italic" FontFamily=""/>
+                   HorizontalTextAlignment="Center" FontFamily=""/>
 
                 <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Create account" FontSize="40" TextColor="Black" 
                    FontAttributes="Bold" HorizontalTextAlignment="Center"  />
@@ -45,20 +45,20 @@
 
                 <BoxView Grid.Row="5" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0" />
                 <Entry Grid.Row="5" Grid.ColumnSpan="2" x:Name="createAC_namee" Placeholder="Full name"
-                BackgroundColor="Transparent" Margin="20,0,20,0"/>
+                BackgroundColor="Transparent" Margin="20,0,20,0" TextColor="Black" PlaceholderColor="DarkGray"/>
 
 
                 <BoxView Grid.Row="7" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0"/>
                 <Entry Grid.Row="7" Grid.ColumnSpan="2" x:Name="createAC_email" Placeholder="Email" 
-                   BackgroundColor="Transparent" Margin="20,0,20,0"/>
+                   BackgroundColor="Transparent" Margin="20,0,20,0" TextColor="Black" PlaceholderColor="DarkGray"/>
 
 
                 <BoxView Grid.Row="9" Grid.ColumnSpan="2" BackgroundColor="#E5E8E8" CornerRadius="15" Margin="15,0,15,0"/>
                 <Entry Grid.Row="9" Grid.ColumnSpan="2" x:Name="createAC_pass" Placeholder="Password" 
-                   BackgroundColor="Transparent" Margin="20,0,20,0"/>
+                   BackgroundColor="Transparent" Margin="20,0,20,0" TextColor="Black" PlaceholderColor="DarkGray"/>
 
                 <Button Grid.Row="11" Grid.ColumnSpan="2" Text="Sign up" CornerRadius="8" Clicked="Register_Clicked" 
-                    BackgroundColor="#C9E265" FontSize="20" Margin="15,0,15,0"/>
+                    BackgroundColor="#C9E265" FontSize="20" Margin="15,0,15,0" TextColor="Black"/>
 
 
             </Grid>

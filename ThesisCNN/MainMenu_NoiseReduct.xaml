@@ -38,10 +38,10 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Grid.Row="0" Grid.Column="1" Text="RECORD" Clicked="mediaRecorder"
-                                BackgroundColor="#C9E265" CornerRadius="30" x:Name="mediaRecd"/>
+                                BackgroundColor="#C9E265" CornerRadius="30" x:Name="mediaRecd" TextColor="Black"/>
                         <Label Grid.Row="0" Grid.Column="2"/>
                         <Button Grid.Row="0" Grid.Column="3" Text="PLAY" Clicked="mediaPlayer"
-                                BackgroundColor="#C9E265" CornerRadius="30"/>
+                                BackgroundColor="#C9E265" CornerRadius="30" TextColor="Black"/>
                     </Grid>
 
                     <!--BOX 1 NOISE REDUCTION-->
@@ -98,13 +98,13 @@
                         <!--BUTTON NOISE REDUCTION-->
                         <Button Grid.Row="5" Grid.Column="1" BackgroundColor="#C9E265" CornerRadius="10" 
                         Clicked="Button_noiseReduction_low" x:Name="button_low" Text="Low" TextTransform="None"
-                        FontSize="19" FontAttributes="Bold" IsEnabled="False"/>
+                        FontSize="19" FontAttributes="Bold" IsEnabled="False" TextColor="Black"/>
                         <Button Grid.Row="5" Grid.Column="3" BackgroundColor="#C9E265" CornerRadius="10"
                         Clicked="Button_noiseReduction_medium" x:Name="button_medium" TextTransform="None"
-                        FontSize="19" FontAttributes="Bold" Text="Medium" IsEnabled="False"/>
+                        FontSize="19" FontAttributes="Bold" Text="Medium" IsEnabled="False" TextColor="Black"/>
                         <Button Grid.Row="5" Grid.Column="5" BackgroundColor="#C9E265" CornerRadius="10"
                         Clicked="Button_noiseReduction_high" x:Name="button_high" TextTransform="None"
-                        FontSize="19" FontAttributes="Bold" Text="High" IsEnabled="False"/>
+                        FontSize="19" FontAttributes="Bold" Text="High" IsEnabled="False" TextColor="Black"/>
                     </Grid>
 
                     <!--BOX 2 EQUALIZER-->

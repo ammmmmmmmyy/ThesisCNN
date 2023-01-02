@@ -24,9 +24,6 @@
                 <!--BODY-->
                 <Grid Grid.Row="0" Grid.Column="0" >
                     <!--INSERT CODE HERE-->
-                    
-
-
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50"/>
@@ -57,7 +54,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="300"/>
                             </Grid.RowDefinitions>
-                            <Editor Grid.Row="0" Grid.Column="0" x:Name="SpeechInput" Placeholder="Enter Text" />
+                            <Editor Grid.Row="0" Grid.Column="0" x:Name="SpeechInput" Placeholder="Enter Text" TextColor="Black"/>
                         </Grid>
                         <!--SPEAK FOR ME!-->
                         <Grid Grid.Row="3" Grid.Column="2" VerticalOptions="Center" BackgroundColor="Transparent">
@@ -68,7 +65,7 @@
                             <Button Grid.Row="0" Grid.Column="0" x:Name="SpeechOutput"
                             Text="Speak for Me!" TextTransform="None" HeightRequest="50" WidthRequest="250"
                             Clicked="SpeechButtonPressed" Margin="60,0,60,0" CornerRadius="12"
-                            BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold"
+                            BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold" TextColor="Black"
                             />
                         </Grid>
                     </Grid>

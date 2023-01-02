@@ -123,7 +123,7 @@ namespace ThesisCNN
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)
         {
-            if (xctCameraView.CaptureMode == CameraCaptureMode.Photo)
+            if (xctCameraView.CaptureMode == CameraCaptureMode.Video)
             {
                 captureMode.Text = "Video";
                 xctCameraView.CaptureMode = CameraCaptureMode.Video;
@@ -146,7 +146,7 @@ namespace ThesisCNN
         private void MediaCaptured(object sender, MediaCapturedEventArgs e)
         {
 
-            imgView.Source = e.Image;
+            imgView.Source = e.Video.File;
             imgViewPanel.IsVisible = true;
         }
 

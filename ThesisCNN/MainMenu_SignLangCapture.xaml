@@ -26,7 +26,7 @@
                     <!--INSERT CODE HERE-->
                     <xct:CameraView
                         x:Name="xctCameraView"
-                        CaptureMode="Photo"
+                        CaptureMode="Video"
                         MediaCaptured="MediaCaptured"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand" />

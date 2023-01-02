@@ -59,7 +59,7 @@
                             </Grid.RowDefinitions>
                             <Button Grid.Row="0" Grid.Column="0" x:Name="start" Text="Listen To Me!" 
                             Clicked="Start_Clicked" Margin="80,0,80,0" CornerRadius="12"
-                            BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold"/>
+                            BackgroundColor="#C9E265" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
                         </Grid>
                     </Grid>
                 </Grid>
