@@ -54,7 +54,8 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="300"/>
                             </Grid.RowDefinitions>
-                            <Editor Grid.Row="0" Grid.Column="0" x:Name="SpeechInput" Placeholder="Enter Text" TextColor="Black"/>
+                            <Editor Grid.Row="0" Grid.Column="0" x:Name="SpeechInput" Placeholder="Enter Text" TextColor="Black"
+                                    PlaceholderColor="Black"/>
                         </Grid>
                         <!--SPEAK FOR ME!-->
                         <Grid Grid.Row="3" Grid.Column="2" VerticalOptions="Center" BackgroundColor="Transparent">

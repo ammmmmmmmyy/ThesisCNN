@@ -76,18 +76,18 @@
                     <!--NAME-->
                     <Label Grid.Row="1" Grid.Column="1" Text="NAME" FontSize="18" TextColor="Black"/>
                     <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="15" 
-                             BackgroundColor="White" Margin="20,0,20,0"/>
+                             BackgroundColor="White" Margin="15,0,15,0"/>
                     
                     <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="18" 
-                           x:Name="change_name" TextColor="Black" PlaceholderColor="Black"
+                           x:Name="change_name" TextColor="Black" PlaceholderColor="DimGray"
                            Margin="25,0,25,0" Placeholder="Name"/>
                     <!--EMAIL-->
                     <Label Grid.Row="3" Grid.Column="1" Text="EMAIL" FontSize="18" TextColor="Black"/>
                     <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="15" 
-                             BackgroundColor="White" Margin="20,0,20,0"/>
+                             BackgroundColor="White" Margin="15,0,15,0"/>
                     
                     <Entry Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontSize="18"
-                           x:Name="change_email" TextColor="Black" PlaceholderColor="Black"
+                           x:Name="change_email" TextColor="Black" PlaceholderColor="DimGray"
                            Margin="25,0,25,0" Placeholder="Email"/>
                 </Grid>
 
