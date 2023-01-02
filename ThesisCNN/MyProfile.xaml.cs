@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using SQLite;
+using System;
+using System.IO;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Windows.Input;
-using SQLite;
-using System.IO;
 
 namespace ThesisCNN
 {
@@ -49,7 +44,7 @@ namespace ThesisCNN
                         pincodequery.Email = change_email.Text;
                         db.Update(pincodequery);
 
-                        
+
 
                         await DisplayAlert("Notification", "Email and Name Updated.", "OK");
 
@@ -59,13 +54,13 @@ namespace ThesisCNN
                     }
                     else if (string.IsNullOrEmpty(change_name.Text) && string.IsNullOrEmpty(change_email.Text).Equals(false))
                     {
-                            pincodequery.Email = change_email.Text;
-                            db.Update(pincodequery);
+                        pincodequery.Email = change_email.Text;
+                        db.Update(pincodequery);
 
-                            await DisplayAlert("Notification", "Email updated.", "OK");
+                        await DisplayAlert("Notification", "Email updated.", "OK");
 
-                            change_name.Text = null;
-                            change_email.Text = null;
+                        change_name.Text = null;
+                        change_email.Text = null;
 
                     }
                     else if (string.IsNullOrEmpty(change_email.Text) && string.IsNullOrEmpty(change_name.Text).Equals(false))
@@ -80,7 +75,7 @@ namespace ThesisCNN
                     }
                     await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
                 }
-               
+
             }
 
         }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SQLite;
+using System;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SQLite;
-using System.IO;
 
 namespace ThesisCNN
 {
@@ -37,14 +33,14 @@ namespace ThesisCNN
                     Application.Current.Properties["UserPass"] = findTrue.Password;
 
                     await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
-                   /*
-                   findTrue.Logged_In = "false";
-                   db.Update(findTrue);*/
+                    /*
+                    findTrue.Logged_In = "false";
+                    db.Update(findTrue);*/
                 }
-                
+
             }
         }
-       
+
 
         //REGISTRATION
         private async void Register_Clicked(object sender, EventArgs e)
@@ -94,7 +90,7 @@ namespace ThesisCNN
                 }
             }
             //
-            
+
         }
         private bool IsTableExists(string v)
         {

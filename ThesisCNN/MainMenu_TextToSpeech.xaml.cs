@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
 
 namespace ThesisCNN
 {
@@ -118,7 +114,7 @@ namespace ThesisCNN
 
             await Shell.Current.GoToAsync($"//{nameof(MainMenu_TextToSpeech)}");
         }
-        
+
         //NAV:SPEECH TO TEXT PAGE
         private async void Button_text_speech(object sender, EventArgs e)
         {

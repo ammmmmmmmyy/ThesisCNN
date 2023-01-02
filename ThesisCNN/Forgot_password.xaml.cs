@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SQLite;
+using System;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SQLite;
-using System.IO;
 
 namespace ThesisCNN
 {
@@ -32,7 +28,7 @@ namespace ThesisCNN
                 //SET NEW PASSWORD
                 if (verified_icon.IsVisible == true)
                 {
-                    if(string.IsNullOrEmpty(new_pass.Text) || string.IsNullOrEmpty(confirm_pass.Text))
+                    if (string.IsNullOrEmpty(new_pass.Text) || string.IsNullOrEmpty(confirm_pass.Text))
                     {
                         await DisplayAlert("Notification", "Please complete the following.", "OK");
                     }
@@ -75,7 +71,7 @@ namespace ThesisCNN
                         await DisplayAlert("Notification", "Email is not registered", "OK");
                     }
                 }
-                
+
             }
         }
     }

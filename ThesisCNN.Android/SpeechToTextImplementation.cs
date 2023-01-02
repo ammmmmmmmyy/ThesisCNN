@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Speech;
-using Android.Views;
-using Android.Widget;
 using Plugin.CurrentActivity;
+using System;
 using ThesisCNN.Droid;
 [assembly: Xamarin.Forms.Dependency(typeof(SpeechToTextImplementation))]
 namespace ThesisCNN.Droid
 {
-    
+
     public class SpeechToTextImplementation : ISpeechToText
     {
         private readonly int VOICE = 10;
@@ -38,29 +30,29 @@ namespace ThesisCNN.Droid
             string rec = global::Android.Content.PM.PackageManager.FeatureMicrophone;
             if (rec == "android.hardware.microphone")
             {
-				try
-				{
-					var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
-                voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
+                try
+                {
+                    var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
 
 
-                voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, "Speak now");
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, "Speak now");
 
-                voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
-                voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
-                voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
-                voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
-                voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
-                _activity.StartActivityForResult(voiceIntent, VOICE);
-				}
-				catch(ActivityNotFoundException ex)
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
+                    _activity.StartActivityForResult(voiceIntent, VOICE);
+                }
+                catch (ActivityNotFoundException ex)
                 {
                     String appPackageName = "com.google.android.googlequicksearchbox";
                     try
                     {
                         Intent intent = new Intent(Intent.ActionView, global::Android.Net.Uri.Parse("market://details?id=" + appPackageName));
                         _activity.StartActivityForResult(intent, VOICE);
-                        
+
                     }
                     catch (ActivityNotFoundException e)
                     {
@@ -68,7 +60,7 @@ namespace ThesisCNN.Droid
                         _activity.StartActivityForResult(intent, VOICE);
                     }
                 }
-                
+
             }
             else
             {

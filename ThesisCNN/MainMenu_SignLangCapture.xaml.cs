@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.CommunityToolkit.UI.Views;
 
 
 namespace ThesisCNN
@@ -53,7 +49,7 @@ namespace ThesisCNN
                 button_speech.IsVisible = false;
             }
         }
-        
+
         //MAIN MENU NOISE REDUCTION 
         private async void Clicked_button_noiseReduction(object sender, EventArgs e)
         {
