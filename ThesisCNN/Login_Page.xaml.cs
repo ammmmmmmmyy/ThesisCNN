@@ -14,34 +14,6 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
-        //CHECKS IF USER IS CURRENTLY LOG IN 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            //
-            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactDB.db");
-            var db = new SQLiteConnection(dbpath);
-
-            if (IsTableExists("Contact_loggedIn") == true)
-            {
-                string contactlog_true = "true";
-                var findTrue = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_true).FirstOrDefault();
-                if (findTrue != null)
-                {
-                    Application.Current.Properties["UserName"] = findTrue.Name;
-                    Application.Current.Properties["UserEmail"] = findTrue.Email;
-                    Application.Current.Properties["UserPass"] = findTrue.Password;
-
-                    await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
-                    /*
-                    findTrue.Logged_In = "false";
-                    db.Update(findTrue);*/
-                }
-
-            }
-        }
-
-
         //REGISTRATION
         private async void Register_Clicked(object sender, EventArgs e)
         {
@@ -60,13 +32,6 @@ namespace ThesisCNN
                     var pincodequery = db.Table<Contact_loggedIn>().Where(a => a.Email == logIn_email.Text).Where(b => b.Password == logIn_pass.Text).FirstOrDefault();
                     if (pincodequery != null)
                     {
-                        /*string contactlog_false = "false";
-                        var setLog = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_false).FirstOrDefault();
-                        if (setLog != null)
-                        {
-                            setLog.Logged_In = "true";
-                            db.Update(setLog);
-                        }*/
                         pincodequery.Logged_In = "true";
                         db.Update(pincodequery);
 

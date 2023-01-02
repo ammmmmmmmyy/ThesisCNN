@@ -14,6 +14,29 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
+        //CHECKS IF USER IS CURRENTLY LOG IN 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            //
+            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "contactDB.db");
+            var db = new SQLiteConnection(dbpath);
+
+            if (IsTableExists("Contact_loggedIn") == true)
+            {
+                string contactlog_true = "true";
+                var findTrue = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_true).FirstOrDefault();
+                if (findTrue != null)
+                {
+                    Application.Current.Properties["UserName"] = findTrue.Name;
+                    Application.Current.Properties["UserEmail"] = findTrue.Email;
+                    Application.Current.Properties["UserPass"] = findTrue.Password;
+
+                    await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                }
+
+            }
+        }
         private async void Register_Clicked(object sender, EventArgs e)
         {
             //
