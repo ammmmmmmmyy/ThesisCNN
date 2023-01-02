@@ -118,6 +118,20 @@ namespace ThesisCNN
         //NAV:SPEECH TO TEXT PAGE
         private async void Button_text_speech(object sender, EventArgs e)
         {
+            button_noiseReduction.IsEnabled = false;
+            button_cam.IsEnabled = false;
+            button_speech.IsEnabled = false;
+
+            await Task.WhenAll(
+                button_noiseReduction.TranslateTo(0, 50, 300),
+                button_cam.TranslateTo(-20, 0, 300),
+                button_speech.TranslateTo(20, 0, 300)
+                );
+
+            button_noiseReduction.IsVisible = false;
+            button_cam.IsVisible = false;
+            button_speech.IsVisible = false;
+
             await Shell.Current.GoToAsync($"//{nameof(MainMenu_SpeechTextTrans)}");
         }
     }
