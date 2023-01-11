@@ -72,14 +72,11 @@
 
 
     <!--HAMBURGER MENU PAGES-->
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent ContentTemplate="{DataTemplate local:MyFiles}" Route="MyFiles"
-                      Icon="icon_myFiles.png" Title="MY FILES"/>
-        <ShellContent ContentTemplate="{DataTemplate local:MyProfile}" Route="MyProfile" 
-                      Icon="icon_myProfile.png" Title="MY PROFILE"/>
-        <ShellContent ContentTemplate="{DataTemplate local:About}" Route="About"
-                      Icon="icon_about.png" Title="ABOUT"/>
-    </FlyoutItem>
-    <ShellContent ContentTemplate="{DataTemplate local:Login_Page}" Route="Login_Page"
-                      Icon="logout.png" Title="LOGOUT" Appearing="Button_Logout"/>
+
+    <ShellContent ContentTemplate="{DataTemplate local:MyProfile}" Route="MyProfile"
+                  Icon="icon_myProfile.png" Title="MY PROFILE"/>
+        
+    <ShellContent ContentTemplate="{DataTemplate local:Login_Page}" Route="Login_Page" 
+                  Icon="logout.png" Title="LOGOUT" Appearing="Button_Logout"/>
+    
 </Shell>
