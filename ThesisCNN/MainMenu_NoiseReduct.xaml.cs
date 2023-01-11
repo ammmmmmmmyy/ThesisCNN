@@ -17,38 +17,6 @@ namespace ThesisCNN
         {
             InitializeComponent();
         }
-        //SWITCH
-        private void Switch_toggled(object sender, ToggledEventArgs e)
-        {
-            var state = e.Value;
-            if (state == false)
-            {
-                switchState.Text = "off";
-                button_low.IsEnabled = false;
-                button_medium.IsEnabled = false;
-                button_high.IsEnabled = false;
-            }
-            else
-            {
-                switchState.Text = "on";
-                button_low.IsEnabled = true;
-                button_medium.IsEnabled = true;
-                button_high.IsEnabled = true;
-            }
-        }
-        //
-        private void Button_noiseReduction_low(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Login_Page());
-        }
-        private void Button_noiseReduction_medium(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new SignUP_Page());
-        }
-        private void Button_noiseReduction_high(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MainMenu_NoiseReduct());
-        }
 
         //Record/Play button
         void mediaRecorder(object sender, EventArgs e)

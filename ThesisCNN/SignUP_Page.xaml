@@ -37,7 +37,7 @@
 
 
                 <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Welcome" FontSize="48" TextColor="Black"  
-                   HorizontalTextAlignment="Center" FontFamily=""/>
+                   HorizontalTextAlignment="Center" />
 
                 <Label Grid.Row="3" Grid.ColumnSpan="2" Text="Create account" FontSize="40" TextColor="Black" 
                    FontAttributes="Bold" HorizontalTextAlignment="Center"  />
