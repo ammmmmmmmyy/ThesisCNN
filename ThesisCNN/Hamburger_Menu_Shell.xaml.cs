@@ -17,7 +17,7 @@ namespace ThesisCNN
         {
             Shell.Current.FlyoutIsPresented = false;
         }
-        private void Button_Logout(object sender, EventArgs e)
+        private async void Button_Logout(object sender, EventArgs e)
         {
             if (IsTableExists("Contact_loggedIn") == true)
             {
@@ -25,11 +25,15 @@ namespace ThesisCNN
                 var db = new SQLiteConnection(dbpath);
 
                 string contactlog_true = "true";
-                var findTrue = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_true).FirstOrDefault();
+                string reg_email = $"{Application.Current.Properties["UserEmail"]}";
+                string reg_password = $"{Application.Current.Properties["UserPass"]}";
+                var findTrue = db.Table<Contact_loggedIn>().Where(a => a.Email == reg_email).Where(b => b.Password == reg_password).Where(c => c.Logged_In == contactlog_true).FirstOrDefault();
+                //var findTrue = db.Table<Contact_loggedIn>().Where(a => a.Logged_In == contactlog_true).FirstOrDefault();
                 if (findTrue != null)
                 {
                     findTrue.Logged_In = "false";
                     db.Update(findTrue);
+                    await Shell.Current.GoToAsync($"///{nameof(Login_Page)}");
                 }
 
             }

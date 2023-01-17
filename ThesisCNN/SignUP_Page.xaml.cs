@@ -32,7 +32,7 @@ namespace ThesisCNN
                     Application.Current.Properties["UserEmail"] = findTrue.Email;
                     Application.Current.Properties["UserPass"] = findTrue.Password;
 
-                    await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                    await Shell.Current.GoToAsync($"///{nameof(MainMenu_NoiseReduct)}");
                 }
 
             }
@@ -67,6 +67,14 @@ namespace ThesisCNN
                             Logged_In = "true"
                         };
                         db.Insert(iten);
+                        Application.Current.Properties["UserName"] = createAC_namee.Text;
+                        Application.Current.Properties["UserEmail"] = createAC_email.Text;
+                        Application.Current.Properties["UserPass"] = createAC_pass.Text;
+
+                        createAC_namee.Text = null;
+                        createAC_email.Text = null;
+                        createAC_pass.Text = null;
+
                         await DisplayAlert("Notification", "Registered!", "OK");
                         await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
                     }
@@ -83,6 +91,14 @@ namespace ThesisCNN
                         Logged_In = "true"
                     };
                     db.Insert(item);
+                    Application.Current.Properties["UserName"] = createAC_namee.Text;
+                    Application.Current.Properties["UserEmail"] = createAC_email.Text;
+                    Application.Current.Properties["UserPass"] = createAC_pass.Text;
+
+                    createAC_namee.Text = null;
+                    createAC_email.Text = null;
+                    createAC_pass.Text = null;
+
                     await DisplayAlert("Notification", "Registered!", "OK");
                     await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
                 }
