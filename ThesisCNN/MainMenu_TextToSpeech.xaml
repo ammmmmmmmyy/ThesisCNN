@@ -96,7 +96,7 @@
                         <ColumnDefinition Width="17"/>
                     </Grid.ColumnDefinitions>
 
-                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" Grid.RowSpan="2" BackgroundColor="White"/>
+                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="10" Grid.RowSpan="2" BackgroundColor="White"/>
 
                     <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_hearing.png" 
                              BackgroundColor="Transparent" IsVisible="false" IsEnabled="False"
