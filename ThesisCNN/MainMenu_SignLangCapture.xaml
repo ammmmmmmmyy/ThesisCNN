@@ -12,92 +12,50 @@
             <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
                 <Grid.RowDefinitions>
                     <!--BODY-->
-                    <RowDefinition Height="466"/>
-                    <!--MAIN MENU-->
-                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="472"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="78"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="17"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="70"/>
+
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="18"/>
                 </Grid.ColumnDefinitions>
 
-                <!--BODY-->
-                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
-
-                    <!--INSERT CODE HERE-->
+                <!--CAM-->
+                <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="9">
                     <xct:CameraView
                         x:Name="xctCameraView"
                         CaptureMode="Video"
-                        MediaCaptured="MediaCaptured"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand" />
-
-                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" x:Name="imgViewPanel" Spacing="0">
-                        <Frame Padding="3" BackgroundColor="White" HeightRequest="200" WidthRequest="200">
-                            <StackLayout Spacing="0">
-                                <Image Source="icon.png" Aspect="AspectFit" x:Name="imgView"/>
-                                <Button Text="Close" VerticalOptions="EndAndExpand" Clicked="CloseImageView"/>
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-
-                    <StackLayout VerticalOptions="EndAndExpand" Spacing="2" Padding="6">
-                        <Label Text="Video Mode" TextColor="White" FontSize="14" VerticalOptions="Center"/>
-                        <StackLayout Orientation="Horizontal">
-                            <Switch Toggled="Switch_Toggled" x:Name="switchMode" VerticalOptions="Center"/>
-                            <Label Text="Image" TextColor="Red" FontSize="14" HorizontalOptions="EndAndExpand" VerticalOptions="Center" x:Name="captureMode"/>
-                        </StackLayout>
-                        <Button Text="Capture" Clicked="CaptureImage" x:Name="captureBtn"/>
-                        <StackLayout Orientation="Horizontal">
-                            <Button Text="Record Video" Clicked="RecordVideo" IsEnabled="false" x:Name="btnrecordVideo" 
-                            HorizontalOptions="FillAndExpand"/>
-                            <Button Text="Stop Video" Clicked="StopVideo" IsEnabled="False" x:Name="btnstopVideo" 
-                            VerticalOptions="EndAndExpand"  HorizontalOptions="FillAndExpand"/>
-                        </StackLayout>
-                    </StackLayout>
-                    <!---->
-
                 </Grid>
-
                 <!--MAIN MENU-->
-                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="5"/>
-                        <RowDefinition Height="5"/>
-                        <RowDefinition Height="60"/>
-                        <RowDefinition Height="78"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="17"/>
-                        <ColumnDefinition Width="70"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="70"/>
+                <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="9" Grid.RowSpan="3" BackgroundColor="White"/>
 
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="70"/>
-                        <ColumnDefinition Width="17"/>
-                    </Grid.ColumnDefinitions>
-
-                    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" Grid.RowSpan="2" BackgroundColor="White"/>
-
-                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_hearing.png" 
+                <ImageButton Grid.Row="4" Grid.Column="4" Source="menu_hearing.png" 
                              BackgroundColor="Transparent" IsVisible="false" IsEnabled="False"
                              x:Name="button_noiseReduction" Clicked="Clicked_button_noiseReduction"/>
 
-                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_cam.png" BackgroundColor="Transparent"
+                <ImageButton Grid.Row="4" Grid.Column="4" Source="menu_cam.png" BackgroundColor="Transparent"
                              x:Name="button_cam" Clicked="Clicked_button_cam" IsVisible="false" IsEnabled="False"/>
 
-                    <ImageButton Grid.Row="3" Grid.Column="4" Source="menu_speech.png" BackgroundColor="Transparent"
+                <ImageButton Grid.Row="4" Grid.Column="4" Source="menu_speech.png" BackgroundColor="Transparent"
                              x:Name="button_speech" Clicked="Clicked_button_speech" IsVisible="false" IsEnabled="False"/>
 
-
-                    <ImageButton Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3" 
+                <ImageButton Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" 
                              Source="menu_cam.png" BackgroundColor="Transparent"
                              Clicked="Button_mainmenu"/>
-                </Grid>
-
             </Grid>
            
         </StackLayout>
