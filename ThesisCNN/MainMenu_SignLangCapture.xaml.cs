@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
@@ -25,8 +27,26 @@ namespace ThesisCNN
 
 
         }
-       
-        
-        
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            RunTimePermission();
+        }
+
+        public async void RunTimePermission()
+        {
+            var status = PermissionStatus.Unknown;
+
+            status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+
+            if (status != PermissionStatus.Granted)
+            {
+
+                status = await Utils.CheckPermissions(Permission.Camera);
+            }
+
+        }
+
+
     }
 }
