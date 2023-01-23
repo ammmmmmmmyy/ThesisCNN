@@ -7,57 +7,5 @@
              BackgroundColor="#F6F2F2"
              >
 
-    <ContentPage.Content>
-        <StackLayout>
-            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
-                <Grid.RowDefinitions>
-                    <!--BODY-->
-                    <RowDefinition Height="472"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="5"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="78"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="17"/>
-                    <ColumnDefinition Width="70"/>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="70"/>
-
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="70"/>
-                    <ColumnDefinition Width="18"/>
-                </Grid.ColumnDefinitions>
-
-                <!--CAM-->
-                <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="10">
-                    <xct:CameraView
-                        x:Name="xctCameraView"
-                        CaptureMode="Video"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="FillAndExpand" />
-                </Grid>
-                <!--MAIN MENU-->
-                <BoxView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="10" Grid.RowSpan="4" BackgroundColor="White"/>
-
-                <ImageButton Grid.Row="4" Grid.Column="4" Source="menu_hearing.png" 
-                             BackgroundColor="Transparent" IsVisible="false" IsEnabled="False"
-                             x:Name="button_noiseReduction" Clicked="Clicked_button_noiseReduction"/>
-
-                <ImageButton Grid.Row="4" Grid.Column="4" Source="menu_cam.png" BackgroundColor="Transparent"
-                             x:Name="button_cam" Clicked="Clicked_button_cam" IsVisible="false" IsEnabled="False"/>
-
-                <ImageButton Grid.Row="4" Grid.Column="4" Source="menu_speech.png" BackgroundColor="Transparent"
-                             x:Name="button_speech" Clicked="Clicked_button_speech" IsVisible="false" IsEnabled="False"/>
-
-                <ImageButton Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" 
-                             Source="menu_cam.png" BackgroundColor="Transparent"
-                             Clicked="Button_mainmenu"/>
-            </Grid>
-           
-        </StackLayout>
-    </ContentPage.Content>
+    <WebView HorizontalOptions="Fill" VerticalOptions="Fill"  x:Name="webviewjava"></WebView>
 </ContentPage>
