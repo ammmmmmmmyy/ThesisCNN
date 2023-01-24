@@ -1,10 +1,13 @@
-﻿using Android.App;
+﻿using Android;
+using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Speech;
+using AndroidX.Core.Content;
 using Plugin.Permissions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace ThesisCNN.Droid
@@ -13,14 +16,30 @@ namespace ThesisCNN.Droid
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IMessageSender
     {
         private readonly int VOICE = 10;
-        protected override void OnCreate(Bundle savedInstanceState)
+        public static MainActivity Instance { get; private set; }
+        protected async override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             base.OnCreate(savedInstanceState);
+            Instance = this;
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            if (ContextCompat.CheckSelfPermission(MainActivity.Instance, Manifest.Permission.Camera) != Permission.Granted)
+            {
+
+
+
+                await Permissions.RequestAsync<Permissions.Camera>();
+                await Permissions.RequestAsync<Permissions.Microphone>();
+                await Permissions.RequestAsync<Permissions.Media>();
+
+
+
+            }
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

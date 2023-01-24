@@ -18,35 +18,20 @@ namespace ThesisCNN
         {
             InitializeComponent();
 
-            var urlSource = new UrlWebViewSource();
+            /*var urlSource = new UrlWebViewSource();
 
             string baseUrl = DependencyService.Get<IBaseUrl>().Get();
             string filePathUrl = Path.Combine(baseUrl, "index.html");
             urlSource.Url = filePathUrl;
-            webviewjava.Source = urlSource;
+            webviewjava.Source = urlSource;*/
 
 
         }
-        protected override void OnAppearing()
+
+        private void _button_Clicked(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            RunTimePermission();
+            webView.Source = "https://www.trovadating.com/Webview/GoLive.aspx?user_id=10383";
         }
-
-        public async void RunTimePermission()
-        {
-            var status = PermissionStatus.Unknown;
-
-            status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-
-            if (status != PermissionStatus.Granted)
-            {
-
-                status = await Utils.CheckPermissions(Permission.Camera);
-            }
-
-        }
-
 
     }
 }
