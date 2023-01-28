@@ -9,10 +9,6 @@
 
     <!--"<WebView HorizontalOptions="Fill" VerticalOptions="Fill"  x:Name="webviewjava"></WebView>-->
     <StackLayout>
-        <Button x:Name="_button" Clicked="_button_Clicked" />
-        <local:MyWebView
-        x:Name="webView"
-        HeightRequest="500"
-        WidthRequest="500" />
+        <local:MyWebView x:Name="webView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
     </StackLayout>
 </ContentPage>

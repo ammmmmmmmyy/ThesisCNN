@@ -24,14 +24,14 @@ namespace ThesisCNN
             string filePathUrl = Path.Combine(baseUrl, "index.html");
             urlSource.Url = filePathUrl;
             webviewjava.Source = urlSource;*/
-
+            webView.Source = "https://keen-zabaione-e7a661.netlify.app/";
 
         }
 
-        private void _button_Clicked(object sender, EventArgs e)
+        /*private void _button_Clicked(object sender, EventArgs e)
         {
-            webView.Source = "https://www.trovadating.com/Webview/GoLive.aspx?user_id=10383";
-        }
+            webView.Source = "https://signit-translator-from-chatgpt.glitch.me/";
+        }*/
 
     }
 }

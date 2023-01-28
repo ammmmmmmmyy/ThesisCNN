@@ -6,7 +6,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Speech;
 using AndroidX.Core.Content;
-using Plugin.Permissions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -45,7 +44,6 @@ namespace ThesisCNN.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
