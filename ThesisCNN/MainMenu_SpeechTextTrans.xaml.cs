@@ -130,7 +130,8 @@ namespace ThesisCNN
             button_cam.IsVisible = false;
             button_speech.IsVisible = false;
 
-            await Shell.Current.GoToAsync($"//{nameof(MainMenu_SignLangCapture)}");
+            //await Shell.Current.GoToAsync($"//{nameof(MainMenu_SignLangCapture)}");
+            await Navigation.PushAsync(new MainMenu_SignLangCapture());
         }
         //MAIN MENU SPEECH TO TEXT
         private async void Clicked_button_speech(object sender, EventArgs e)
