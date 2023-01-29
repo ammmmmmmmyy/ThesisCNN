@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ThesisCNN.App_Tutorial"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="700"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="670"/>
+                </Grid.RowDefinitions>
+                
+                <CarouselView Grid.Row="0" Grid.Column="0" x:Name="Carousel" 
+                              IndicatorView="IndicatorView">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate >
+                            <Image Source="{Binding Url}" HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="FillAndExpand"/>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray"
+                               IndicatorSize="10" x:Name="IndicatorView" 
+                               VerticalOptions="End" HorizontalOptions="Center"
+                               Grid.Row="1" Grid.Column="0"/>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Next" Clicked="Button_Clicked" WidthRequest="250"
+                        Margin="60,10,60,0" CornerRadius="12" BackgroundColor="#C9E265" FontSize="18" 
+                        FontAttributes="Bold" TextColor="Black"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -24,7 +24,7 @@ namespace ThesisCNN
             string filePathUrl = Path.Combine(baseUrl, "index.html");
             urlSource.Url = filePathUrl;
             webviewjava.Source = urlSource;*/
-            webView.Source = "https://keen-zabaione-e7a661.netlify.app/";
+            webView.Source = "https://signit-translator.glitch.me/";
 
         }
 

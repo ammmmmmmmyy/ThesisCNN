@@ -76,7 +76,7 @@ namespace ThesisCNN
                         createAC_pass.Text = null;
 
                         await DisplayAlert("Notification", "Registered!", "OK");
-                        await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                        await Navigation.PushAsync(new App_Tutorial());
                     }
 
                 }
@@ -100,7 +100,8 @@ namespace ThesisCNN
                     createAC_pass.Text = null;
 
                     await DisplayAlert("Notification", "Registered!", "OK");
-                    await Shell.Current.GoToAsync($"//{nameof(MainMenu_NoiseReduct)}");
+                    //await Shell.Current.GoToAsync($"//{nameof(App_Tutorial)}");
+                    await Navigation.PushAsync(new App_Tutorial());
                 }
             }
         }

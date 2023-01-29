@@ -75,8 +75,12 @@
 
     <ShellContent ContentTemplate="{DataTemplate local:MyProfile}" Route="MyProfile"
                   Icon="icon_myProfile.png" Title="MY PROFILE"/>
-        
-    <ShellContent ContentTemplate="{DataTemplate local:Login_Page}"
-                  Icon="logout.png" Title="LOGOUT" Appearing="Button_Logout"/>
+
+    <ShellContent ContentTemplate="{DataTemplate local:App_Tutorial}"
+                  Icon="icon_about.png" Title="TUTORIAL" />
+
+    <ShellContent Route="Login_Page" ContentTemplate="{DataTemplate local:Login_Page}"
+                  Icon="logout.png" Title="LOGOUT" Appearing="Button_Logout" />
+
     
 </Shell>
